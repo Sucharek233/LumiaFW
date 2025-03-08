@@ -49,7 +49,7 @@ function getModels() {
 
 function getRM(rm) {
     console.log("hello")
-    return db.exec(`SELECT friendly_name, rm, country_code, country_info, fw_info, file_name, link FROM firmware WHERE rm='${rm}'`)[0]["values"][0];
+    return db.exec(`SELECT friendly_name, rm, country_code, country_info, fw_info, file_name, link FROM firmware WHERE rm='${rm}'`)[0]["values"];
 }
 
 loadDb();
