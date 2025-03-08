@@ -26,9 +26,23 @@ function getModels() {
     });
 
     // sorting
-    models = Object.fromEntries(
-        Object.entries(models).sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
-    );
+    models = Object.entries(models)
+        .sort(([a], [b]) => {
+            // Extract numeric parts from model names
+            const numA = parseInt(a.match(/\d+/)?.[0] || "0", 10);
+            const numB = parseInt(b.match(/\d+/)?.[0] || "0", 10);
+            return numA - numB;
+        })
+        .reduce((acc, [key, value]) => {
+            // Sort the RM-XXX values numerically
+            const sortedValues = value.sort((rmA, rmB) => {
+                const numA = parseInt(rmA.match(/\d+/)?.[0] || "0", 10);
+                const numB = parseInt(rmB.match(/\d+/)?.[0] || "0", 10);
+                return numA - numB;
+            });
+            acc[key] = sortedValues;
+            return acc;
+        }, {});
 
     loadSidebar();
 }

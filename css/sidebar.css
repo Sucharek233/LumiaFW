@@ -6,6 +6,7 @@
     background-color: #F2F2F2;
     box-sizing: border-box;
     max-height: 100vh;
+    min-width: 200px;
 }
 
 #modelContainer {

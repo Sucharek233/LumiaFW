@@ -4,5 +4,22 @@
 }
 
 #title {
-    margin: 8px 0px 0px 0px;
+    margin: 16px 0px;
+}
+
+#cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    padding: 15px 21px;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    transition: box-shadow 0.3sease-in-out;
+}
+
+.card p {
+    margin: 0;
 }
