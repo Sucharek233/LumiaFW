@@ -1,0 +1,30 @@
+#sidebar {
+    width: fit-content;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    max-height: 100vh;
+}
+
+#modelContainer {
+    border-radius: 4px;
+    overflow-y: auto;
+}
+
+.modelEntry {
+    color: #000;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
+
+    cursor: pointer;
+}
+
+.modelEntry:hover {
+    background: #DBDBDB;
+}

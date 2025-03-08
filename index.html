@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lumia FW</title>
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/sidebar.css">
+
+        <!-- sql.js import -->
+        <script src="libs/sqljs-wasm/sql-wasm.js"></script>
+        
+        <script src="js/dbFunc.js"></script>
+        <script src="js/elementDeclare.js" defer></script>
+        <script src="js/sidebar.js" defer></script>
+        <script src="js/showResults.js" defer></script>
+    </head>
+    <body>
+        <div id="sidebar">
+            <div id="modelContainer"></div>
+        </div>
+        <div id="results">
+            <h2 id="title">Please select a model</h2>
+            <div id="cards"></div>
+        </div>
+    </body>
+</html>

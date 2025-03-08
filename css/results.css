@@ -1,0 +1,8 @@
+#results {
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#title {
+    margin: 8px 0px 0px 0px;
+}
