@@ -1,6 +1,8 @@
 #results {
     max-height: 100vh;
     overflow: auto;
+    width: 100%;
+    padding: 0 20px;
 }
 
 #title {
