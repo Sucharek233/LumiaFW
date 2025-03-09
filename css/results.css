@@ -1,5 +1,5 @@
 #results {
-    max-height: 100vh;
+    /* max-height: 100vh; */
     overflow: auto;
     width: 100%;
     padding: 0 20px;
@@ -26,9 +26,21 @@
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 6px;
+    transition: 0.2s;
 }
 .rmEntry:hover {
     background: #DBDBDB;
+}
+
+.rmEntry.selected {
+    background: #A9A9A9;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rmEntry.selected:hover {
+    background: #808080;
 }
 
 #cards {

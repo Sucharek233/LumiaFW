@@ -1,11 +1,11 @@
 #sidebar {
     width: fit-content;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
     overflow-y: auto;
     box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
     background-color: #F2F2F2;
     box-sizing: border-box;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     min-width: 200px;
     width: 350px;
 }
@@ -16,17 +16,29 @@
 }
 
 .modelEntry {
-    color: #000;
-    background: #fff;
+    color: #000000;
+    background: #ffffff;
     display: flex;
     align-items: center;
     font-size: 13px;
     font-weight: 600;
     padding: 10px 15px;
+    transition: 0.2s;
 
     cursor: pointer;
 }
 
 .modelEntry:hover {
     background: #DBDBDB;
+}
+
+.modelEntry.selected {
+    background: #A9A9A9;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modelEntry.selected:hover {
+    background: #808080;
 }

@@ -5,6 +5,7 @@ function removeByClassName(className) {
     }
 }
 
+let lastSelectedResults;
 function showResults(model, rms) {
     title.innerText = `Showing results for ${model}`;
     removeByClassName("rmEntry");
@@ -17,6 +18,13 @@ function showResults(model, rms) {
         rmEl.textContent = rm;
 
         rmEl.onclick = function() {
+            if (lastSelectedResults) {
+                if (lastSelectedResults.textContent == rm) {
+                    return;
+                }
+            }
+
+            selectStyleResults(rmEl);
             removeByClassName("card");
             const infos = getRM(rm);
 
@@ -53,4 +61,13 @@ function showResults(model, rms) {
     if (rmEntries.length < 2) {
         rmEntries[0].dispatchEvent(new Event('click'));
     }
+}
+
+function selectStyleResults(element) {
+    if (lastSelectedResults) {
+        lastSelectedResults.classList.remove("selected");
+    }
+    
+    element.classList.add("selected");
+    lastSelectedResults = element;
 }

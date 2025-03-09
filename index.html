@@ -6,8 +6,11 @@
         <title>Lumia FW</title>
 
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/sidebar.css">
         <link rel="stylesheet" href="css/results.css">
+        <link rel="stylesheet" href="css/infoOverlay.css">
+        <link rel="stylesheet" href="css/hyperlinks.css">
 
         <!-- sql.js import -->
         <script src="libs/sqljs-wasm/sql-wasm.js"></script>
@@ -16,15 +19,33 @@
         <script src="js/elementDeclare.js" defer></script>
         <script src="js/sidebar.js" defer></script>
         <script src="js/showResults.js" defer></script>
+        <script src="js/infoOverlay.js" defer></script>
     </head>
     <body>
-        <div id="sidebar">
-            <div id="modelContainer"></div>
+        <div id="header">
+            <h2>Lumia FW</h2>
+            <div id="btns">
+                <button onclick="showOverlay('cr')">Credits</button>
+                <button onclick="showOverlay('ctrb')">Contribute</button>
+                <button onclick="showOverlay('abt')">About</button>
+            </div>
+            <div id="infoOverlay">
+                <div id="overlayClose" onclick="hideOverlay()"></div>
+                <div id="overlayContent">
+                    <h2 id="overlayTitle">Credits</h2>
+                    <p id="overlayText">Some credits here</p>
+                </div>
+            </div>
         </div>
-        <div id="results">
-            <h2 id="title">Please select a model</h2>
-            <div id="rmSelection"></div>
-            <div id="cards"></div>
+        <div id="mainContent">
+            <div id="sidebar">
+                <div id="modelContainer"></div>
+            </div>
+            <div id="results">
+                <h2 id="title">Please select a model</h2>
+                <div id="rmSelection"></div>
+                <div id="cards"></div>
+            </div>
         </div>
     </body>
 </html>

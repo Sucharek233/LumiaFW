@@ -1,0 +1,29 @@
+#header {
+    background-color: #F2F2F2;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h2 {
+    margin: 0;
+}
+
+#btns {
+    display: flex;
+    gap: 6px;
+}
+#btns button {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#btns button:hover {
+    background-color: #5a6268;
+}
