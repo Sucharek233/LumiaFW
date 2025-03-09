@@ -70,4 +70,5 @@ function selectStyleResults(element) {
     
     element.classList.add("selected");
     lastSelectedResults = element;
+    resize();
 }

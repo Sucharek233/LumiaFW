@@ -1,4 +1,5 @@
 let lastSelectedSidebar;
+let modelEntires = [];
 
 function loadSidebar() {
     Object.keys(models).forEach(model => {
@@ -11,12 +12,13 @@ function loadSidebar() {
                     return;
                 }
             }
-            
+
             selectStyleSidebar(modelEntry);
             const rms = models[model];
             showResults(model, rms);
         }
 
+        modelEntires.push(modelEntry);
         modelContainer.append(modelEntry);
     });
 }
@@ -28,4 +30,5 @@ function selectStyleSidebar(element) {
     
     element.classList.add("selected");
     lastSelectedSidebar = element;
+    lastSelectedResults = undefined;
 }

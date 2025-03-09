@@ -2,7 +2,7 @@ let db;
 
 async function loadDb() {
     const sql = await initSqlJs({
-        locateFile: file => "libs/sqljs-wasm/sql-wasm.wasm"
+        locateFile: file => "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.wasm"
     });
 
     const firmwareDbFile = await fetch("database/database.db");
@@ -13,6 +13,9 @@ async function loadDb() {
 }
 
 let models = {};
+
+let rmToLumia = {};
+let rmList = [];
 function getModels() {
     const modelsRaw = db.exec("SELECT DISTINCT rm, friendly_name FROM firmware;")[0]["values"];
     modelsRaw.forEach(model => {
@@ -43,6 +46,14 @@ function getModels() {
             acc[key] = sortedValues;
             return acc;
         }, {});
+
+    Object.entries(models).forEach(([model, rms]) => {
+        rms.forEach(rm => {
+            if (!rmToLumia[rm]) rmToLumia[rm] = [];
+            rmToLumia[rm].push(model);
+            rmList.push(rm); // Collect RM codes for fuzzy searching
+        });
+    });
 
     loadSidebar();
 }

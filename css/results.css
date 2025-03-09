@@ -1,8 +1,9 @@
 #results {
     /* max-height: 100vh; */
-    overflow: auto;
+    /* overflow: auto; */
     width: 100%;
-    padding: 0 20px;
+    /* padding: 0 20px; */
+    padding: 0 0 0 20px;
 }
 
 #title {
@@ -48,14 +49,17 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 12px;
+    overflow: auto;
 }
 
 .card {
     padding: 15px 21px;
     background-color: #f1f1f1;
     border-radius: 12px;
-    transition: box-shadow 0.3sease-in-out;
+    transition: box-shadow 0.3 ease-in-out;
     overflow: hidden;
+    min-height: 128px;
+    margin-right: 10px;
 }
 
 .card p {

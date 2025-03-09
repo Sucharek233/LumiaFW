@@ -7,3 +7,5 @@ const cards = document.getElementById("cards");
 const overlay = document.getElementById("infoOverlay");
 const overlayTitle = document.getElementById("overlayTitle");
 const overlayText = document.getElementById("overlayText");
+
+const searchInput = document.getElementById("searchInput");

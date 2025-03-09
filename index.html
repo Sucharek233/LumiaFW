@@ -13,13 +13,18 @@
         <link rel="stylesheet" href="css/hyperlinks.css">
 
         <!-- sql.js import -->
-        <script src="libs/sqljs-wasm/sql-wasm.js"></script>
+        <!-- <script src="libs/sqljs-wasm/sql-wasm.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.js"></script>
+        <!-- fuzzysort import -->
+        <script src="https://cdn.jsdelivr.net/npm/fuzzysort@3.1.0/fuzzysort.min.js"></script>
         
         <script src="js/dbFunc.js"></script>
         <script src="js/elementDeclare.js" defer></script>
         <script src="js/sidebar.js" defer></script>
         <script src="js/showResults.js" defer></script>
         <script src="js/infoOverlay.js" defer></script>
+        <script src="js/search.js" defer></script>
+        <script src="js/resizing.js" defer></script>
     </head>
     <body>
         <div id="header">
@@ -39,6 +44,7 @@
         </div>
         <div id="mainContent">
             <div id="sidebar">
+                <input id="searchInput" placeholder="Search... (RM-XXX, Lumia XXX)" oninput="performSearch()">
                 <div id="modelContainer"></div>
             </div>
             <div id="results">
