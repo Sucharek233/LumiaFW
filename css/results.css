@@ -9,10 +9,33 @@
     margin: 16px 0px;
 }
 
+#rmSelection {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.rmEntry {
+    color: #000;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.rmEntry:hover {
+    background: #DBDBDB;
+}
+
 #cards {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 12px;
 }
 
 .card {
@@ -20,8 +43,10 @@
     background-color: #f1f1f1;
     border-radius: 12px;
     transition: box-shadow 0.3sease-in-out;
+    overflow: hidden;
 }
 
 .card p {
     margin: 0;
+    text-wrap: nowrap;
 }
