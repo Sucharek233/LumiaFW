@@ -5,6 +5,38 @@ function removeByClassName(className) {
     }
 }
 
+const linkPriorities = [
+    "drive.google.com",
+    "mediafire.com",
+    "t.me",
+    "firmwaredrive.com",
+    "support.halabtech.com",
+];
+function sortResultsByLinks(info) {
+    // Chatgpt saving my ass here xdddd
+    info.sort((a, b) => {
+        const linkA = a[6]; // Extract link
+        const linkB = b[6];
+    
+        const priorityA = linkPriorities.findIndex(domain => linkA.includes(domain));
+        const priorityB = linkPriorities.findIndex(domain => linkB.includes(domain));
+    
+        // If both links are in the list, sort by priority
+        if (priorityA !== -1 && priorityB !== -1) {
+            return priorityA - priorityB; 
+        }
+    
+        // If only one link is in the list, it comes first
+        if (priorityA !== -1) return -1;
+        if (priorityB !== -1) return 1;
+    
+        // If neither link is in the list, sort alphabetically
+        return linkA.localeCompare(linkB);
+    });
+
+    return info;
+}
+
 let lastSelectedResults;
 function showResults(model, rms) {
     title.innerText = `Showing results for ${model}`;
@@ -26,7 +58,8 @@ function showResults(model, rms) {
 
             selectStyleResults(rmEl);
             removeByClassName("card");
-            const infos = getRM(rm);
+            let infos = getRM(rm);
+            infos = sortResultsByLinks(infos);
 
             infos.forEach(info => {
                 const card = document.createElement("div");

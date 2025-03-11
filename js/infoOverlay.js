@@ -4,7 +4,8 @@ const text = {
         `Thanks to all of these sources for making this site possible!<br><br>
         
         <a href="https://t.me/lumia_rm">Lumia Firmware Telegram group</a><br>
-        <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br><br>
+        <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br>
+        <a href="https://firmwarefile.com/?s=lumia">Firmware File</a><br><br>
         
         More are on the way!`
     ],
