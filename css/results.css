@@ -56,13 +56,22 @@
     padding: 15px 21px;
     background-color: #f1f1f1;
     border-radius: 12px;
-    transition: box-shadow 0.3 ease-in-out;
     overflow: hidden;
-    min-height: 128px;
+    min-height: fit-content;
     margin-right: 10px;
+    transition: 0.2s;
 }
 
 .card p {
     margin: 0;
     text-wrap: nowrap;
 }
+
+.cardEm {
+    background-color: #d1dff6;
+    /* cursor: pointer;
+    user-select: none; */
+}
+/* .cardEm:hover {
+    background-color: #c2d6f6;
+} */

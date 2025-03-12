@@ -1,6 +1,6 @@
 # LumiaFW
 
-A simple website for getting links to the Lumia Firmware Telegram group
+A simple website for quickly and easily getting links to download firmware files for Lumia phones
 
 ## Credits:
 Luami Firmware Telegram group: https://t.me/lumia_rm

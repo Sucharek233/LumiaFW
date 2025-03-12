@@ -62,4 +62,13 @@ function getRM(rm) {
     return db.exec(`SELECT friendly_name, rm, country_code, country_info, fw_info, file_name, link FROM firmware WHERE rm='${rm}'`)[0]["values"];
 }
 
+function getEmergency(rm) {
+    const result = db.exec(`SELECT file_name, link FROM emergency WHERE rm='${rm}'`);
+    if (result.length == 0) {
+        return false;
+    }
+
+    return result[0]["values"];
+}
+
 loadDb();

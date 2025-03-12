@@ -59,7 +59,22 @@ function showResults(model, rms) {
             selectStyleResults(rmEl);
             removeByClassName("card");
             let infos = getRM(rm);
+            let emFiles = getEmergency(rm);
             infos = sortResultsByLinks(infos);
+            
+            if (emFiles) {
+                const emFilesEl = document.createElement("div");
+                emFilesEl.className = "card cardEm";
+                let emFilesText = "<b>Emergency files</b>:"
+                emFiles.forEach(emFile => {
+                    emFilesText += `<br><br>
+                        <b>File name:</b> ${emFile[0]}<br>
+                        <b>Link:</b> <a href=${emFile[1]}>${emFile[1]}</a>
+                    `;
+                });
+                emFilesEl.innerHTML = emFilesText;
+                cards.append(emFilesEl);
+            }
 
             infos.forEach(info => {
                 const card = document.createElement("div");
