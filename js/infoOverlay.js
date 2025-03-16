@@ -6,7 +6,8 @@ const text = {
         <a href="https://t.me/lumia_rm">Lumia Firmware Telegram group</a><br>
         <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br>
         <a href="https://firmwarefile.com/?s=lumia">Firmware File</a><br>
-        <a href="https://archive.org/download/W10M_FFUs">Internet Archive #1</a><br><br>
+        <a href="https://archive.org/download/W10M_FFUs">Internet Archive #1</a><br>
+        <a href="https://protobetatest.com/download/lumia-emergency-files/">Proto Beta Test</a><br><br>
         
         More are on the way!`
     ],

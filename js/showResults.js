@@ -66,7 +66,7 @@ function showResults(model, rms) {
             if (emFiles) {
                 const emFilesEl = document.createElement("div");
                 emFilesEl.className = "card cardEm";
-                let emFilesText = "<b>Emergency files</b>:"
+                let emFilesText = "<b>Emergency files</b> (mirrors):"
                 emFiles.forEach(emFile => {
                     emFilesText += `<br><br>
                         <b>File name:</b> ${emFile[0]}<br>
