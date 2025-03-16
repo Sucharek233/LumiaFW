@@ -7,10 +7,11 @@ function removeByClassName(className) {
 
 const linkPriorities = [
     "drive.google.com",
+    "archive.org",
     "mediafire.com",
     "t.me",
-    "firmwaredrive.com",
     "support.halabtech.com",
+    "firmwaredrive.com"
 ];
 function sortResultsByLinks(info) {
     // Chatgpt saving my ass here xdddd
