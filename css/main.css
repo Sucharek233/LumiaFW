@@ -1,3 +1,81 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* main.css*/
+        --main-background: #1e2328;
+        --text-col: #e1e1e1;
+
+        --cont-bg: #2c2f36;
+
+        /* header.css */
+        --header-text-col: #e1e1e1;
+        --header-btn-bg: #495057;
+        --header-btn-bg-hover: #343a40;
+
+        /* hyperlinks.css */
+        --hyperlink: #66aaff;
+        --hypelink-visited: #a0a0a0;
+
+        /* results.css, sidebar.css */
+        --model-entry: #333b42;
+        --entry: #333b42;
+        --entry-hover: #4c545a;
+        --entry-selected: #555c63;
+        --entry-selected-hover: #68737a;
+
+        --card-bg: #2c343b;
+        --card-em-bg: #00416d;
+
+        /* sidebar.css */
+        --search-bg: var(--entry);
+        --search-border: var(--entry-selected); 
+
+        /* scrollbars.css */
+        --scrollbar-thumb: #555;
+        --scrollbar-thumb-border: #333;
+        --scrollbar-thumb-hover: #777;
+        --scrollbar-track: var(--model-entry);  /* Darker gray for contrast */
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* main.css*/
+        --main-background: unset;
+        --text-col: unset;
+    
+        --cont-bg: #F2F2F2;
+    
+        /* header.css */
+        --header-text-col: unset;
+        --header-btn-bg: #6c757d;
+        --header-btn-bg-hover: #5a6268;
+    
+        /* hyperlinks.css */
+        --hyperlink: #0077cc;
+        --hypelink-visited: #5a5a5a;
+    
+        /* results.css, sidebar.css */
+        --model-entry: white;
+        --entry: #f1f1f1;
+        --entry-hover: #DBDBDB;
+        --entry-selected: #A9A9A9;
+        --entry-selected-hover: #808080;
+    
+        --card-bg: #f1f1f1;;
+        --card-em-bg: #d1dff6;
+    
+        /* sidebar.css */
+        --search-bg: white;
+        --search-border: #ccc;
+    
+        /* scrollbars.css */
+        --scrollbar-thumb: #868e96;  /* Darker gray for contrast */
+        --scrollbar-thumb-border: #adb5bd; /* More defined border */
+        --scrollbar-thumb-hover: #495057; /* Even darker on hover */
+        --scrollbar-track: var(--model-entry);  /* Darker gray for contrast */
+    }
+}
+
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -7,6 +85,7 @@ body {
     display: flex;
     max-height: 100vh;
     flex-direction: column;
+    background-color: var(--main-background);
 }
 
 #mainContent {

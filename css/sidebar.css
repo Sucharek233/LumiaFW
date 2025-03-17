@@ -3,58 +3,60 @@
     padding: 0px 10px 10px 10px;
     overflow-y: auto;
     box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-    background-color: #F2F2F2;
+    background-color: var(--cont-bg);  /* Dark background for sidebar */
     box-sizing: border-box;
-    /* max-height: 100vh; */
     min-width: 200px;
     width: 350px;
     border-bottom-right-radius: 10px;
-
     display: flex;
     flex-direction: column;
     gap: 8px;
+    color: var(--text-col);  /* Light text color for readability */
 }
 
 #modelContainer {
     border-radius: 4px;
     overflow-y: auto;
+    background-color: var(--entry);
 }
 
 .modelEntry {
-    color: #000000;
-    background: #ffffff;
+    color: var(--text-col);  /* Light text color for entries */
+    background: var(--model-entry);  /* Dark background for entries */
     display: flex;
     align-items: center;
     font-size: 13px;
     font-weight: 600;
     padding: 10px 15px;
     transition: 0.2s;
-
     cursor: pointer;
 }
 
 .modelEntry:hover {
-    background: #DBDBDB;
+    background: var(--entry-hover);  /* Lighter shade on hover */
 }
 
 .modelEntry.selected {
-    background: #A9A9A9;
+    background: var(--entry-selected);  /* Selected entry darker shade */
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for depth */
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .modelEntry.selected:hover {
-    background: #808080;
+    background: var(--entry-selected-hover);  /* Darker hover effect on selected */
 }
 
 #searchInput {
     padding: 10px 15px;
-    border: 2px solid #ccc;
+    background-color: var(--search-bg);  /* Dark background for the input field */
+    border: 2px solid var(--search-border);  /* Dark border color */
     border-radius: 8px;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-col);  /* Light text color */
 }
+
 #searchInput:focus {
     border-color: #888;
     box-shadow: 0 0 6px rgba(136, 136, 136, 0.5);

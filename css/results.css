@@ -1,13 +1,12 @@
 #results {
-    /* max-height: 100vh; */
-    /* overflow: auto; */
     width: 100%;
-    /* padding: 0 20px; */
     padding: 0 0 0 20px;
+    color: var(--text-col);  /* Light text color for readability */
 }
 
 #title {
     margin: 16px 0px;
+    color: var(--text-col);  /* Light text color for the title */
 }
 
 #rmSelection {
@@ -18,8 +17,8 @@
 }
 
 .rmEntry {
-    color: #000;
-    background: #f1f1f1;
+    color: var(--text-col);  /* Light text color for entries */
+    background: var(--entry);  /* Dark background for entries */
     display: flex;
     align-items: center;
     font-size: 13px;
@@ -29,49 +28,47 @@
     border-radius: 6px;
     transition: 0.2s;
 }
+
 .rmEntry:hover {
-    background: #DBDBDB;
+    background: var(--entry-hover);  /* Lighter shade on hover */
 }
 
 .rmEntry.selected {
-    background: #A9A9A9;
+    background: var(--entry-selected);  /* Selected entry darker shade */
     color: white;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for better contrast */
 }
 
 .rmEntry.selected:hover {
-    background: #808080;
+    background: var(--entry-selected-hover);  /* Darker hover effect on selected */
 }
 
 #cards {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     margin-bottom: 12px;
     overflow: auto;
 }
 
 .card {
     padding: 15px 21px;
-    background-color: #f1f1f1;
+    background-color: var(--card-bg);  /* Dark background for cards */
     border-radius: 12px;
     overflow: hidden;
     min-height: fit-content;
     margin-right: 10px;
+    margin-bottom: 10px;
     transition: 0.2s;
 }
 
 .card p {
     margin: 0;
+    color: var(--text-col);  /* Light text color for card paragraphs */
     text-wrap: nowrap;
 }
 
 .cardEm {
-    background-color: #d1dff6;
-    /* cursor: pointer;
-    user-select: none; */
+    background-color: var(--card-em-bg);
 }
-/* .cardEm:hover {
-    background-color: #c2d6f6;
-} */

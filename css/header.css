@@ -1,5 +1,5 @@
 #header {
-    background-color: #F2F2F2;
+    background-color: var(--cont-bg);  /* Dark background color */
     padding: 14px;
     display: flex;
     align-items: center;
@@ -8,14 +8,16 @@
 
 #header h2 {
     margin: 0;
+    color: var(--header-text-col);  /* Light text color for the heading */
 }
 
 #btns {
     display: flex;
     gap: 6px;
 }
+
 #btns button {
-    background-color: #6c757d;
+    background-color: var(--header-btn-bg);  /* Dark button background */
     color: white;
     padding: 8px 16px;
     font-size: 16px;
@@ -24,6 +26,7 @@
     cursor: pointer;
     transition: 0.2s;
 }
+
 #btns button:hover {
-    background-color: #5a6268;
+    background-color: var(--header-btn-bg-hover);  /* Darker shade on hover */
 }
