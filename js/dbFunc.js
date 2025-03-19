@@ -1,11 +1,32 @@
 let db;
 
-async function loadDb() {
+async function extractDb() {
+    async function loadDbFile() {
+        const response = await fetch("database/database.zip");
+        const blob = await response.blob();
+    
+        const file = new File([blob], "downloaded_file", { type: blob.type });
+    
+        return file;
+    }
+    const dbFile = await loadDbFile();
+
+    Unarchiver.open(dbFile).then(async function (archive) {
+        for (let entry of archive.entries) {
+            if (entry.is_file) {
+                let entry_file = await entry.read();
+                loadDb(entry_file);
+            }
+        }
+    });
+}
+
+async function loadDb(dbFile) {
     const sql = await initSqlJs({
         locateFile: file => "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.wasm"
     });
 
-    const firmwareDbFile = await fetch("database/database.db");
+    const firmwareDbFile = dbFile;
     const buffer = await firmwareDbFile.arrayBuffer();
     db = new sql.Database(new Uint8Array(buffer));
 
@@ -71,4 +92,4 @@ function getEmergency(rm) {
     return result[0]["values"];
 }
 
-loadDb();
+extractDb();
