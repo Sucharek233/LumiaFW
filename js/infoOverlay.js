@@ -28,7 +28,7 @@ const text = {
         
         The goal of this site is to provide a quick and easy way to download firmware for your Lumia device.<br><br>
         
-        You can check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>`
+        You can check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.`
     ]
 }
 

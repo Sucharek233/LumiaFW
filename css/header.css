@@ -11,6 +11,10 @@
     color: var(--header-text-col);  /* Light text color for the heading */
 }
 
+#version {
+    font-size: 9pt
+}
+
 #btns {
     display: flex;
     gap: 6px;

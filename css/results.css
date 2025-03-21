@@ -2,6 +2,8 @@
     width: 100%;
     padding: 0 0 0 20px;
     color: var(--text-col);  /* Light text color for readability */
+    background-color: var(--main-background);
+    border-top-left-radius: 12px;
 }
 
 #title {
@@ -60,13 +62,14 @@
     min-height: fit-content;
     margin-right: 10px;
     margin-bottom: 10px;
-    transition: 0.2s;
+    text-wrap: nowrap;
 }
 
 .card p {
     margin: 0;
     color: var(--text-col);  /* Light text color for card paragraphs */
-    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cardEm {

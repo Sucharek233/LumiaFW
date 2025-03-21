@@ -7,17 +7,18 @@ function removeByClassName(className) {
 
 const linkPriorities = [
     "drive.google.com",
+    "mega",
     "archive.org",
     "mediafire.com",
     "t.me",
     "support.halabtech.com",
     "firmwaredrive.com"
 ];
-function sortResultsByLinks(info) {
+function sortResultsByLinks(info, linkIndex) {
     // Chatgpt saving my ass here xdddd
     info.sort((a, b) => {
-        const linkA = a[6]; // Extract link
-        const linkB = b[6];
+        const linkA = a[linkIndex]; // Extract link
+        const linkB = b[linkIndex];
     
         const priorityA = linkPriorities.findIndex(domain => linkA.includes(domain));
         const priorityB = linkPriorities.findIndex(domain => linkB.includes(domain));
@@ -60,17 +61,18 @@ function showResults(model, rms) {
             selectStyleResults(rmEl);
             removeByClassName("card");
             let infos = getRM(rm);
+            infos = sortResultsByLinks(infos, 5);
             let emFiles = getEmergency(rm);
-            infos = sortResultsByLinks(infos);
             
             if (emFiles) {
+                emFiles = sortResultsByLinks(emFiles, 1);
                 const emFilesEl = document.createElement("div");
                 emFilesEl.className = "card cardEm";
-                let emFilesText = "<b>Emergency files</b> (mirrors):"
+                let emFilesText = "<b>Emergency files</b> (mirrors):<br>"
                 emFiles.forEach(emFile => {
-                    emFilesText += `<br><br>
-                        <b>File name:</b> ${emFile[0]}<br>
-                        <b>Link:</b> <a href=${emFile[1]}>${emFile[1]}</a>
+                    emFilesText += `<br>
+                        <p><b>File name:</b> ${emFile[0]}</p>
+                        <p><b>Link:</b> <a href=${emFile[1]}>${emFile[1]}</a></p>
                     `;
                 });
                 emFilesEl.innerHTML = emFilesText;
@@ -87,17 +89,15 @@ function showResults(model, rms) {
                     }
                 });
 
-                const infoElement = document.createElement("p");
-                infoElement.innerHTML = `
-                    <b>Hardware model:</b> ${rm}<br>
-                    <b>Country code:</b> ${info[2]}<br>
-                    <b>Country info:</b> ${info[3]}<br>
-                    <b>Firmware:</b> ${info[4]}<br>
-                    <b>File name:</b> ${info[5]}<br>
-                    <b>Link:</b> <a href="${info[6]}">${info[6]}</a>
+                card.innerHTML = `
+                    <p><b>Hardware model:</b> ${rm}</p>
+                    <p><b>Country code:</b> ${info[1]}</p>
+                    <p><b>Country info:</b> ${info[2]}</p>
+                    <p><b>Firmware:</b> ${info[3]}</p>
+                    <p><b>File name:</b> ${info[4]}</p>
+                    <p><b>Link:</b> <a href="${info[5]}">${info[5]}</a></p>
                 `
         
-                card.append(infoElement);
                 cards.append(card);
                 // console.log(info);
             });

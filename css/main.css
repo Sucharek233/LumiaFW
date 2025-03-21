@@ -40,7 +40,7 @@
 @media (prefers-color-scheme: light) {
     :root {
         /* main.css*/
-        --main-background: unset;
+        --main-background: white;
         --text-col: unset;
     
         --cont-bg: #F2F2F2;
@@ -92,4 +92,5 @@ body {
     display: flex;
     width: 100%;
     overflow: hidden;
+    background-color: var(--cont-bg);
 }
