@@ -7,6 +7,7 @@ function removeByClassName(className) {
 
 const linkPriorities = [
     "drive.google.com",
+    "onedrive",
     "mega",
     "archive.org",
     "mediafire.com",
