@@ -47,7 +47,7 @@
     background: var(--entry-selected-hover);  /* Darker hover effect on selected */
 }
 
-#searchInput {
+.searchBox, #redirectButton {
     padding: 10px 15px;
     background-color: var(--search-bg);  /* Dark background for the input field */
     border: 2px solid var(--search-border);  /* Dark border color */
@@ -57,7 +57,11 @@
     color: var(--text-col);  /* Light text color */
 }
 
-#searchInput:focus {
+.searchBox:focus {
     border-color: #888;
     box-shadow: 0 0 6px rgba(136, 136, 136, 0.5);
+}
+
+#redirectButton {
+    padding: 6px 8px;
 }

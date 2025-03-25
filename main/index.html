@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lumia FW</title>
+
+        <link rel="stylesheet" href="../global-css/main.css">
+        <link rel="stylesheet" href="../global-css/header.css">
+        <link rel="stylesheet" href="../global-css/sidebar.css">
+        <link rel="stylesheet" href="../global-css/infoOverlay.css">
+        <link rel="stylesheet" href="../global-css/scrollbars.css">
+        <link rel="stylesheet" href="../global-css/hyperlinks.css">
+        
+        <link rel="stylesheet" href="css/results.css">
+
+        <!-- sql.js import -->
+        <!-- <script src="libs/sqljs-wasm/sql-wasm.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.12.0/sql-wasm.js"></script>
+        <!-- fuzzysort import -->
+        <script src="https://cdn.jsdelivr.net/npm/fuzzysort@3.1.0/fuzzysort.min.js"></script>
+        <!-- unarchiver.js import -->
+        <script src="https://xenova.github.io/unarchiver.js/dist/unarchiver.min.js"></script>
+        
+        <script src="js/constants.js"></script>
+        <script src="../global-js/dbFunc.js"></script>
+        <script src="../global-js/infoOverlay.js"></script>
+        <script src="../global-js/searchFunc.js"></script>
+        <script src="../global-js/deletion.js"></script>
+
+        <script src="js/elementDeclare.js" defer></script>
+        <script src="js/sidebar.js" defer></script>
+        <script src="js/showResults.js" defer></script>
+        <script src="js/search.js" defer></script>
+        <script src="js/resizing.js" defer></script>
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXEW0W9YWL"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KXEW0W9YWL');
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h2>Lumia FW <span id="version">v0.4.0</span></h2>
+
+            <div id="btns">
+                <button onclick="showOverlay('cr')">Credits</button>
+                <button onclick="showOverlay('ctrb')">Contribute</button>
+                <button onclick="showOverlay('abt')">About</button>
+            </div>
+            <div id="infoOverlay">
+                <div id="overlayClose" onclick="hideOverlay()"></div>
+                <div id="overlayContent">
+                    <h2 id="overlayTitle"></h2>
+                    <p id="overlayText"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="mainContent">
+            <div id="sidebar">
+                <button id="redirectButton" onclick="window.open('/LumiaFW/tools', '_self');">Tools</button>
+                <input id="searchInput" class="searchBox" placeholder="Search... (RM-XXX, Lumia XXX)" oninput="performSearch()">
+                <div id="modelContainer"></div>
+            </div>
+            <div id="results">
+                <h2 id="title">Please select a model</h2>
+                <div id="rmSelection"></div>
+                <div id="cards"></div>
+            </div>
+        </div>
+    </body>
+</html>

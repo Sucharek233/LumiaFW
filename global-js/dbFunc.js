@@ -2,10 +2,10 @@ let db;
 
 async function extractDb() {
     async function loadDbFile() {
-        const response = await fetch("database/database.zip");
+        const response = await fetch(`${window.location.origin}/LumiaFW/database/database.zip`);
         const blob = await response.blob();
     
-        const file = new File([blob], "downloaded_file", { type: blob.type });
+        const file = new File([blob], "downloaded_file", {type: blob.type});
     
         return file;
     }
@@ -76,7 +76,9 @@ function getModels() {
         });
     });
 
-    loadSidebar();
+    if (site == "main") {
+        loadSidebar();
+    }
 }
 
 function getRM(rm) {

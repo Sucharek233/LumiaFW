@@ -1,0 +1,27 @@
+#rmResults {
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#rm h3 {
+    margin: 20px 0 10px 0px;
+    font-size: 16pt;
+}
+.rmResult {
+    /* height: fit-content; */
+    background-color: var(--cont-bg);
+    padding: 10px;
+    margin: 0px 6px 5px 0px;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+.rmResult h4 {
+    font-size: 15pt;
+    margin: 5px 0 0 0;
+}
+.rmResult p {
+    margin: 6px 0;
+}
+.rmResult span {
+    background-color: var(--card-em-bg);
+}

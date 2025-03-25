@@ -1,10 +1,3 @@
-function removeByClassName(className) {
-    let elements = document.getElementsByClassName(className);
-    while (elements[0]) {
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
-
 const linkPriorities = [
     "drive.google.com",
     "onedrive",

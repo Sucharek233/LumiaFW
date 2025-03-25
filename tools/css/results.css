@@ -1,0 +1,12 @@
+#tools {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    color: var(--text-col);  /* Light text color for readability */
+    background-color: var(--main-background);
+    border-top-left-radius: 12px;
+}
+
+#title {
+    margin: 16px 0px;
+    color: var(--text-col);
+}

@@ -1,0 +1,8 @@
+.toolContainer {
+    display: none;
+    flex-direction: column;
+}
+
+.toolInfo {
+    margin: 4px 0 12px 0;
+}
