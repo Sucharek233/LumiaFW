@@ -1,6 +1,6 @@
 #header {
     background-color: var(--cont-bg);  /* Dark background color */
-    padding: 14px;
+    padding: 12px 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,16 +21,24 @@
 }
 
 #btns button {
-    background-color: var(--header-btn-bg);  /* Dark button background */
-    color: white;
+    /* background-color: var(--header-btn-bg); */
+    background-color: var(--search-bg);  /* Dark background like the search box */
+    border: 2px solid var(--search-border);  /* Dark border color */
+    color: var(--text-col);
     padding: 8px 16px;
     font-size: 16px;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
 }
 
 #btns button:hover {
-    background-color: var(--header-btn-bg-hover);  /* Darker shade on hover */
+    /* background-color: var(--header-btn-bg-hover);  */
+    background-color: var(--entry-hover); /* Slightly lighter on hover */
+    border-color: var(--entry-selected-hover);
+}
+
+#btns button:active {
+    background-color: var(--entry-selected); /* Even darker when clicked */
+    transform: scale(0.97); /* Subtle press effect */
 }

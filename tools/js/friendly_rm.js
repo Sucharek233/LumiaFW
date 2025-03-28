@@ -58,5 +58,4 @@ function performSearch() {
         
         rmResults.append(container);
     });
-    resize();
 }

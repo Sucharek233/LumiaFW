@@ -6,7 +6,7 @@ a {
     transition: color 0.2s ease;
 }
 
-a::after {
+a:after {
     content: "";
     position: absolute;
     left: 0;
@@ -18,7 +18,11 @@ a::after {
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-a:hover::after {
+a:active {
+    transform: scale(0.97);
+}
+
+a:hover:after {
     transform: scaleX(1);
 }
 
@@ -26,6 +30,6 @@ a:visited {
     color: var(--hypelink-visited);  /* Gray color for visited links */
 }
 
-a:visited::after {
+a:visited:after {
     background-color: var(--hypelink-visited);  /* Lighter gray for the visited link underline */
 }

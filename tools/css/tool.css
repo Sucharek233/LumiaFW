@@ -1,6 +1,7 @@
 .toolContainer {
     display: none;
     flex-direction: column;
+    overflow: auto;
 }
 
 .toolInfo {

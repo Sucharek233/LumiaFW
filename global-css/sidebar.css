@@ -30,17 +30,21 @@
     padding: 10px 15px;
     transition: 0.2s;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .modelEntry:hover {
     background: var(--entry-hover);  /* Lighter shade on hover */
 }
 
+.modelEntry:active {
+    transform: scale(0.97); /* Subtle press effect */
+}
+
 .modelEntry.selected {
     background: var(--entry-selected);  /* Selected entry darker shade */
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for depth */
-    border-radius: 5px;
 }
 
 .modelEntry.selected:hover {
@@ -53,7 +57,7 @@
     border: 2px solid var(--search-border);  /* Dark border color */
     border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
     color: var(--text-col);  /* Light text color */
 }
 
@@ -64,4 +68,17 @@
 
 #redirectButton {
     padding: 6px 8px;
+    cursor: pointer;
+    background-color: var(--search-bg);  /* Dark background like the search box */
+    border: 2px solid var(--search-border);  /* Dark border color */
+}
+
+#redirectButton:hover {
+    background-color: var(--entry-hover); /* Slightly lighter on hover */
+    border-color: var(--entry-selected-hover);
+}
+
+#redirectButton:active {
+    background-color: var(--entry-selected); /* Even darker when clicked */
+    transform: scale(0.97); /* Subtle press effect */
 }

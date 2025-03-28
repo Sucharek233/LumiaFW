@@ -4,6 +4,10 @@
     color: var(--text-col);  /* Light text color for readability */
     background-color: var(--main-background);
     border-top-left-radius: 12px;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 
 #title {

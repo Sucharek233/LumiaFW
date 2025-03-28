@@ -22,6 +22,8 @@
     width: 60%;
     color: var(--text-col);  /* Light text color for better readability */
     z-index: 2;
+    max-height: 30vh;
+    overflow: auto;
 }
 
 #overlayClose {

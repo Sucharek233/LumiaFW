@@ -9,7 +9,9 @@ const text = {
         <a href="https://archive.org/download/W10M_FFUs">Internet Archive</a><br>
         <a href="https://drive.google.com/drive/folders/1bd--YJ-YIprDZBqB-dE8FNFGGWcn5_Ss?usp=sharing">Google Drive</a><br>
         <a href="https://1drv.ms/f/s!ArkW7KuUvNQykZUnrjCF-5OKcIJSow?e=beUjLy">OneDrive</a><br>
-        <a href="https://protobetatest.com/download/lumia-emergency-files/">Proto Beta Test</a><br><br>
+        <a href="https://protobetatest.com/download/lumia-emergency-files/">Proto Beta Test</a><br>
+        <a href="https://github.com/fadilfadz01/lumia_firmware_download_bot/blob/main/devices.json">Device list from Fadil Fadz</a><br>
+        <a href="https://discord.com/users/1229184983915298836">danyfar1404 on Discord</a><br><br>
         
         More are on the way!`
     ],
