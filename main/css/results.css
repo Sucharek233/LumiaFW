@@ -66,8 +66,6 @@
     padding: 15px 21px;
     background-color: var(--card-bg);  /* Dark background for cards */
     border-radius: 12px;
-    overflow: hidden;
-    min-height: fit-content;
     margin-right: 10px;
     margin-bottom: 10px;
     text-wrap: nowrap;
