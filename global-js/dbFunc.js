@@ -78,6 +78,8 @@ function getModels() {
 
     if (site == "main") {
         loadSidebar();
+    } else if (site == "tools") {
+        loadSelect();
     }
 }
 
@@ -92,6 +94,19 @@ function getEmergency(rm) {
     }
 
     return result[0]["values"];
+}
+
+function getTableColumns(table, exclusions = []) {
+    const result = db.exec(`PRAGMA table_info(${table})`);
+
+    let tableColumns = [];
+    result[0]["values"].forEach(tableColumn => {
+        if (!exclusions.includes(tableColumn[1])) {
+            tableColumns.push(tableColumn[1]);
+        }
+    });
+
+    return tableColumns;
 }
 
 extractDb();

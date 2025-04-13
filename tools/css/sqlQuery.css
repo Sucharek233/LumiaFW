@@ -1,0 +1,39 @@
+#sqlSearchInputContainer {
+    display: flex;
+    gap: 4px;
+}
+
+#sqlSearchInputContainer svg {
+    scale: 1.5;
+    stroke: var(--icon-color);
+    fill: var(--icon-color);
+}
+
+#sqlInput {
+    flex-grow: 1;
+}
+
+#sqlResults {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.sqlResult {
+    padding: 15px 21px;
+    background-color: var(--card-bg);  /* Dark background for cards */
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-wrap: nowrap;
+}
+
+.sqlResult p {
+    margin: 0;
+    overflow: auto;
+}
+
+.sqlErrResult {
+    background-color: var(--err-bg);
+    border: solid 2px var(--err-border);
+}

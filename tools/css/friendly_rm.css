@@ -3,10 +3,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-#rm h3 {
-    margin: 20px 0 10px 0px;
-    font-size: 16pt;
-}
+
 .rmResult {
     /* height: fit-content; */
     background-color: var(--cont-bg);

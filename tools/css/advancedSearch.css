@@ -1,0 +1,89 @@
+#advTableSelectionContainer {
+    display: flex;
+    align-items: baseline;
+    margin: 4px 0 12px 0;
+    gap: 6px;
+}
+
+#advTableSelectionContainer p {
+    margin: 0;
+}
+
+#advSearch select {
+    appearance: none;
+    background-color: var(--select-bg);
+    border: 1px solid var(--select-border);
+    color: var(--select-text);
+    padding: 0.3rem 2rem 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23777' height='12' width='12' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.35rem center;
+    background-size: 24px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#advSearch select:hover, #advSearch select:focus {
+    background-color: var(--select-hover);
+    border-color: var(--entry-selected-hover);
+    outline: none;
+}
+
+#advSearch select option {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+}
+
+#advSearch select option:hover {
+    background-color: var(--select-option-hover);
+}
+
+#advSearchInputsContainer {
+    display: none;
+}
+
+#advSearchBtn {
+    width: 100%;
+}
+#advSearchBtn svg {
+    scale: 1.5;
+    stroke: var(--icon-color);
+    fill: var(--icon-color);
+}
+
+.advSearchInputContainer {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.advSearchInputContainer p {
+    margin: 0;
+}
+
+.advSearchInputContainer input {
+    flex-grow: 1;
+}
+
+#advResults {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.advResult {
+    padding: 15px 21px;
+    background-color: var(--card-bg);  /* Dark background for cards */
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-wrap: nowrap;
+}
+
+.advResult p {
+    margin: 0;
+    overflow: auto;
+}

@@ -20,7 +20,7 @@
     gap: 6px;
 }
 
-#btns button {
+#btns button, .button {
     /* background-color: var(--header-btn-bg); */
     background-color: var(--search-bg);  /* Dark background like the search box */
     border: 2px solid var(--search-border);  /* Dark border color */
@@ -30,15 +30,20 @@
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
-#btns button:hover {
+#btns button:hover, .button:hover {
     /* background-color: var(--header-btn-bg-hover);  */
     background-color: var(--entry-hover); /* Slightly lighter on hover */
     border-color: var(--entry-selected-hover);
 }
 
-#btns button:active {
+#btns button:active, .button:active {
     background-color: var(--entry-selected); /* Even darker when clicked */
     transform: scale(0.97); /* Subtle press effect */
 }
