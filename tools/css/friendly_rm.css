@@ -7,7 +7,7 @@
 .rmResult {
     /* height: fit-content; */
     background-color: var(--cont-bg);
-    padding: 10px;
+    padding: 10px 14px;
     margin: 0px 6px 5px 0px;
     border-radius: 8px;
     flex-grow: 1;

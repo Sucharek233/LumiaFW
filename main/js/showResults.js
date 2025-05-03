@@ -62,7 +62,8 @@ function showResults(model, rms) {
                 emFiles = sortResultsByLinks(emFiles, 1);
                 const emFilesEl = document.createElement("div");
                 emFilesEl.className = "card cardEm";
-                let emFilesText = "<b>Emergency files</b> (mirrors):<br>"
+                let emFilesText = `<p><b>Emergency files</b> (mirrors):</p>
+                                   <p><b>Collection of all emergency files:</b> <a href="https://protobetatest.com/download/lumia-emergency-files">https://protobetatest.com/download/lumia-emergency-files</a></p>`;
                 emFiles.forEach(emFile => {
                     emFilesText += `<br>
                         <p><b>File name:</b> ${emFile[0]}</p>
@@ -70,6 +71,11 @@ function showResults(model, rms) {
                     `;
                 });
                 emFilesEl.innerHTML = emFilesText;
+                cards.append(emFilesEl);
+            } else {
+                const emFilesEl = document.createElement("div");
+                emFilesEl.className = "card cardEm";
+                emFilesEl.innerHTML = `<p><b>No emergency files available for this model!</b</p>`;
                 cards.append(emFilesEl);
             }
 
