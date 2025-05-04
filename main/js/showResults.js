@@ -1,7 +1,7 @@
 const linkPriorities = [
     "drive.google.com",
-    "onedrive",
     "mega",
+    "onedrive",
     "archive.org",
     "mediafire.com",
     "t.me",
