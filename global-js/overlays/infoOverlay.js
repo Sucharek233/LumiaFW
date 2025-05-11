@@ -32,10 +32,15 @@ const text = {
         `Welcome to Lumia FW! An alternative to LumiaFirmware made by Sucharek233.<br><br>
         
         The goal of this site is to provide a quick and easy way to download firmware for your Lumia device.<br><br>
+
+        You can contact me on:<br>
+        Reddit: <a href="https://reddit.com/u/Sucharek233">u/Sucharek233</a><br>
+        Telegram: <a href="https://t.me/Sucharekk">@Sucharekk</a><br>
+        Discord: <a href="https://discord.com/users/571780527728623626">suchare</a><br><br>
         
-        You can check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.`
+        You can also check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.`
     ]
-}
+};
 
 function showOverlay(type) {
     overlay.classList.add("shown");
@@ -45,6 +50,13 @@ function showOverlay(type) {
     overlayText.innerHTML = info[1];
 }
 
+function showOverlayCustom(title, message) {
+    overlay.classList.add("shown");
+
+    overlayTitle.textContent = title;
+    overlayText.innerHTML = message;
+}
+
 function hideOverlay() {
     overlay.classList.remove("shown");
 }
@@ -52,5 +64,7 @@ function hideOverlay() {
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
       hideOverlay();
+      hideContributeOverlay();
+      hideFeedbackOverlay();
     }
 });

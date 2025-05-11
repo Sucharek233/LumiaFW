@@ -23,44 +23,40 @@
         <script src="https://xenova.github.io/unarchiver.js/dist/unarchiver.min.js"></script>
         
         <script src="js/constants.js"></script>
+        <script src="../global-js/constants.js" defer></script>
+
+        <script src="../global-js/loading/elementDeclare.js" defer></script>
+        <script src="js/elementDeclare.js" defer></script>
+
         <script src="../global-js/dbFunc.js"></script>
-        <script src="../global-js/infoOverlay.js"></script>
         <script src="../global-js/searchFunc.js"></script>
         <script src="../global-js/deletion.js"></script>
+        
+        <script src="../global-js/overlays/infoOverlay.js" defer></script>
+        <script src="../global-js/overlays/contributeOverlay.js" defer></script>
+        <script src="../global-js/overlays/feedbackOverlay.js" defer></script>
 
-        <script src="js/elementDeclare.js" defer></script>
+        <script src="../global-js/externalDb/extDb.js"></script>
+        
+        <script src="../global-js/loading/loadHeader.js" defer></script>
+        <script src="../global-js/sidebarCollapse.js"></script>
+
         <script src="js/sidebar.js" defer></script>
         <script src="js/showResults.js" defer></script>
         <script src="js/search.js" defer></script>
 
         <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXEW0W9YWL"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXEW0W9YWL"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-KXEW0W9YWL');
-        </script>
+        </script> -->
     </head>
     <body>
-        <div id="header">
-            <h2>Lumia FW <span id="version">v0.5.1</span></h2>
-
-            <div id="btns">
-                <button onclick="showOverlay('cr')">Credits</button>
-                <button onclick="showOverlay('ctrb')">Contribute</button>
-                <button onclick="showOverlay('abt')">About</button>
-            </div>
-            <div id="infoOverlay">
-                <div id="overlayClose" onclick="hideOverlay()"></div>
-                <div id="overlayContent">
-                    <h2 id="overlayTitle"></h2>
-                    <p id="overlayText"></p>
-                </div>
-            </div>
-        </div>
-
+        <div id="header"></div>
 
 
         <div id="mainContent">
@@ -73,6 +69,8 @@
                 <h2 id="title">Please select a model</h2>
                 <div id="rmSelection"></div>
                 <div id="cards"></div>
+
+                <button id="collapseBtn" onclick="toggleSidebar()">☰</button>
             </div>
         </div>
     </body>

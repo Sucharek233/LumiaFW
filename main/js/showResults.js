@@ -96,14 +96,14 @@ function showResults(model, rms) {
                     <p><b>Firmware:</b> ${info[3]}</p>
                     <p><b>File name:</b> ${info[4]}</p>
                     <p><b>Link:</b> <a href="${info[5]}">${info[5]}</a></p>
-                `
+                `;
         
                 cards.append(card);
                 // console.log(info);
             });
-        }
+        };
 
-        rmEntries.push(rmEl)
+        rmEntries.push(rmEl);
         rmSelection.append(rmEl);
     });
 

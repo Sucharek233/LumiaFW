@@ -1,0 +1,34 @@
+<h2>Lumia FW <span id="version">v0.6.0</span></h2>
+
+<div id="btns">
+    <button onclick="showOverlay('cr')">Credits</button>
+    <button onclick="showFeedbackOverlay()">Feedback</button>
+    <button onclick="showContributeOverlay()">Contribute</button>
+    <button onclick="showOverlay('abt')">About</button>
+</div>
+
+<div id="infoOverlay" class="overlay">
+    <div id="overlayClose" onclick="hideOverlay()" class="overlayClose"></div>
+    <div class="overlayContent">
+        <h2 id="overlayTitle"></h2>
+        <p id="overlayText"></p>
+    </div>
+</div>
+
+<div id="contributeOverlay" class="overlay">
+    <div id="overlayClose" onclick="hideContributeOverlay()" class="overlayClose"></div>
+    <div class="overlayContent">
+        <h2 id="overlayTitle">Contribute</h2>
+        <div id="contributeInputs"></div>
+        <button id="contributeBtn" class="button" onclick="prepareContribution()">Send</button>
+    </div>
+</div>
+
+<div id="feedbackOverlay" class="overlay">
+    <div id="overlayClose" onclick="hideFeedbackOverlay()" class="overlayClose"></div>
+    <div class="overlayContent">
+        <h2 id="overlayTitle">Send Feedback</h2>
+        <div id="feedbackInputs"></div>
+        <button id="feedbackBtn" class="button" onclick="prepareFeedback()">Send</button>
+    </div>
+</div>

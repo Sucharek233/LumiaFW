@@ -16,7 +16,7 @@ function loadSidebar() {
             selectStyleSidebar(modelEntry);
             const rms = models[model];
             showResults(model, rms);
-        }
+        };
 
         modelEntires.push(modelEntry);
         modelContainer.append(modelEntry);

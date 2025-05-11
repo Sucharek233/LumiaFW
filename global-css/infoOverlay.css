@@ -1,4 +1,4 @@
-#infoOverlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,19 +14,28 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-#overlayContent {
+#infoOverlay.overlay {
+    z-index: 50;
+}
+
+.overlayContent {
     background: var(--cont-bg);  /* Dark background for overlay content */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Slightly stronger shadow for depth */
     width: 60%;
     color: var(--text-col);  /* Light text color for better readability */
+    border: solid 1.5px var(--select-border);
     z-index: 2;
     max-height: 30vh;
     overflow: auto;
 }
 
-#overlayClose {
+.overlayContent button {
+    width: 100%;
+}
+
+.overlayClose {
     position: fixed;
     top: 0;
     left: 0;
@@ -35,7 +44,7 @@
     z-index: 1;
 }
 
-#infoOverlay.shown {
+.overlay.shown {
     opacity: 1;
     visibility: visible;
 }
@@ -43,4 +52,40 @@
 #overlayText {
     margin: 8px 0px;
     color: var(--text-col);  /* Light text color for overlay text */
+}
+
+
+
+#contributeOverlay .overlayContent {
+    max-height: 60vh;
+}
+
+#contributeInputs, #feedbackInputs {
+    display: flex;
+    margin: 8px 0;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.contributeInput, .feedbackInput {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.contributeInput p, .feedbackInput p {
+    margin: 0;
+}
+.contributeInput input, .feedbackInput input {
+    flex-grow: 1;
+}
+.contributeInput .searchBox, .feedbackInput .searchBox {
+    padding: 4px 10px;
+}
+
+.feedbackInput textarea {
+    width: 100%;
+    resize: vertical;
+    
+    max-height: 100px;
+    min-height: 40px;
 }

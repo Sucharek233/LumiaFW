@@ -122,3 +122,20 @@ body {
     overflow: hidden;
     background-color: var(--cont-bg);
 }
+
+#collapseBtn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-color: var(--cont-bg);
+    color: var(--text-col);
+    height: 64px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    margin-top: -32px;
+    cursor: pointer;
+}

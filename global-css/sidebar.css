@@ -5,13 +5,20 @@
     box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
     background-color: var(--cont-bg);  /* Dark background for sidebar */
     box-sizing: border-box;
-    min-width: 200px;
-    width: 350px;
+    min-width: 245px;
+    max-width: 245px;
+    width: 245px;
     border-bottom-right-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     color: var(--text-col);  /* Light text color for readability */
+    transition: margin 0.5s;
+    transition-timing-function: cubic-bezier(.17, .67, .33, 1.02);
+}
+
+.sidebarAnim {
+    margin-right: -245px;
 }
 
 #modelContainer {
@@ -57,7 +64,7 @@
     border: 2px solid var(--search-border);  /* Dark border color */
     border-radius: 8px;
     outline: none;
-    transition: 0.3s ease;
+    transition: 0.3s border ease;
     color: var(--text-col);  /* Light text color */
 }
 
