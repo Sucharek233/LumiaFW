@@ -15,3 +15,5 @@ const advNames = {
     title: ["Title", "Title"],
     message: ["Message", "Message"]
 };
+
+let supaCounter = undefined; // not so constant is it :)
