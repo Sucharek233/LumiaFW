@@ -6,7 +6,8 @@ const text = {
         <a href="https://t.me/lumia_rm">Lumia Firmware Telegram group</a><br>
         <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br>
         <a href="https://firmwarefile.com/?s=lumia">Firmware File</a><br>
-        <a href="https://archive.org/download/W10M_FFUs">Internet Archive</a><br>
+        <a href="https://archive.org/download/W10M_FFUs">Internet Archive #1</a><br>
+        <a href="https://archive.org/details/lumiadb">Internet Archive #2</a><br>
         <a href="https://drive.google.com/drive/folders/1bd--YJ-YIprDZBqB-dE8FNFGGWcn5_Ss?usp=sharing">Google Drive</a><br>
         <a href="https://1drv.ms/f/s!ArkW7KuUvNQykZUnrjCF-5OKcIJSow?e=beUjLy">OneDrive</a><br>
         <a href="https://protobetatest.com/download/lumia-emergency-files/">Proto Beta Test</a><br>
@@ -14,7 +15,7 @@ const text = {
         <a href="https://discord.com/users/1229184983915298836">danyfar1404 on Discord</a><br>
         <a href="http://discord.com/users/888438421402550295">validites on Discord</a><br>
         <a href="http://discord.com/users/350363043852713984">mainnn on Discord</a><br><br>
-        
+
         More are on the way!`
     ],
     "abt": [

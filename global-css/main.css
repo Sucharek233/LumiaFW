@@ -109,8 +109,8 @@ html, body {
 body {
     margin: 0;
     display: flex;
-    height: 100vh;
-    max-height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
     flex-direction: column;
     background-color: var(--main-background);
 }
