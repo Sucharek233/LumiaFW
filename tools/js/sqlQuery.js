@@ -53,3 +53,9 @@ async function runSqlQuery() {
         sqlResults.append(resultEl);
     });
 }
+
+sqlQuery.addEventListener("keydown", function(e) {
+    if (e.key == "Enter") {
+        runSqlQuery();
+    }
+});

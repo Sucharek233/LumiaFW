@@ -34,7 +34,7 @@ function loadOptions() {
         const tableColumnName = document.createElement("p");
         tableColumnName.textContent = `${names[0]}:`;
         
-        const tableColumnInput = document.createElement("input");
+        const tableColumnInput = document.createElement("input");   
         tableColumnInput.className = "searchBox advSearchInput";
         tableColumnInput.dataset["column"] = tableColumn;
         tableColumnInput.placeholder = names[1];
@@ -44,6 +44,12 @@ function loadOptions() {
         advSearchInputs.append(wrapper);
     });
 }
+
+advSearchInputs.addEventListener("keydown", function(e) {
+    if (e.key == "Enter") {
+        performAdvSearch();
+    }
+});
 
 function performAdvSearch() {
     removeElementChildren(advResults);

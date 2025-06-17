@@ -6,8 +6,18 @@ const text = {
         <a href="https://t.me/lumia_rm">Lumia Firmware Telegram group</a><br>
         <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br>
         <a href="https://firmwarefile.com/?s=lumia">Firmware File</a><br>
-        <a href="https://archive.org/download/W10M_FFUs">Internet Archive #1</a><br>
+        <a href="https://archive.org/details/W10M_FFUs">Internet Archive #1</a><br>
         <a href="https://archive.org/details/lumiadb">Internet Archive #2</a><br>
+        <a href="https://archive.org/details/nokia-wp-firmware">Internet Archive #3</a><br>
+
+        Internet Archive (Listings with 1 file): <a href="https://archive.org/details/rm-1038-02177.00000.15184.36006-retail-prod-signed-1026-02743-e-000-nl">1</a>, 
+                                                 <a href="https://archive.org/details/rm-998-var-apac-sg-cv">2</a>,
+                                                 <a href="https://archive.org/details/950fw-no-ffu.-7z">3</a>,
+                                                 <a href="https://archive.org/details/rm-983-02179.00000.15455.24047-retail-prod-signed-1001-02-fef-8-att-us">4</a>,
+                                                 <a href="https://archive.org/details/10.0.10586.318.th2_release.160505-1801_ARMv7Fre_MobileCoreProd_RM-1104-EU_059X5C5_FFU">5</a>,
+                                                 <a href="https://archive.org/details/10240-L950XL-L950FFUs">6</a>
+        <br>
+
         <a href="https://drive.google.com/drive/folders/1bd--YJ-YIprDZBqB-dE8FNFGGWcn5_Ss?usp=sharing">Google Drive</a><br>
         <a href="https://1drv.ms/f/s!ArkW7KuUvNQykZUnrjCF-5OKcIJSow?e=beUjLy">OneDrive</a><br>
         <a href="https://protobetatest.com/download/lumia-emergency-files/">Proto Beta Test</a><br>
