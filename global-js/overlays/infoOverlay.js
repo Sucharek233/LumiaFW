@@ -5,10 +5,10 @@ const text = {
         
         <a href="https://t.me/lumia_rm">Lumia Firmware Telegram group</a><br>
         <a href="https://support.halabtech.com/index.php?a=downloads&b=folder&id=113527">HalabTech Support</a><br>
+        <a href="https://lumiadb.com">LumiaDB</a><br>
         <a href="https://firmwarefile.com/?s=lumia">Firmware File</a><br>
         <a href="https://archive.org/details/W10M_FFUs">Internet Archive #1</a><br>
-        <a href="https://archive.org/details/lumiadb">Internet Archive #2</a><br>
-        <a href="https://archive.org/details/nokia-wp-firmware">Internet Archive #3</a><br>
+        <a href="https://archive.org/details/nokia-wp-firmware">Internet Archive #2</a><br>
 
         Internet Archive (Listings with 1 file): <a href="https://archive.org/details/rm-1038-02177.00000.15184.36006-retail-prod-signed-1026-02743-e-000-nl">1</a>, 
                                                  <a href="https://archive.org/details/rm-998-var-apac-sg-cv">2</a>,
@@ -40,7 +40,7 @@ const text = {
         Discord: <a href="https://discord.com/users/571780527728623626">suchare</a><br><br>
         
         You can also check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.<br>
-        Database check (counter): ${supaCounter ?? "not here yet :) reopen Credits"}`
+        Database check (counter): ${supaCounter ?? "not here yet :) reopen About"}`
     ]
 };
 

@@ -21,6 +21,8 @@
         --entry-hover: #4c545a;
         --entry-selected: #555c63;
         --entry-selected-hover: #68737a;
+        --ccsection-bg: var(--entry-hover);
+        --ccsection-text: var(--main-background);
 
         --card-bg: #2c343b;
         --card-em-bg: #00416d;
@@ -73,6 +75,8 @@
         --entry-hover: #DBDBDB;
         --entry-selected: #A9A9A9;
         --entry-selected-hover: #808080;
+        --ccsection-bg: var(--entry-hover);
+        --ccsection-text: var(--main-background);
     
         --card-bg: #f1f1f1;;
         --card-em-bg: #d1dff6;

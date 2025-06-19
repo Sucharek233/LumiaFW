@@ -64,7 +64,7 @@
     border: 2px solid var(--search-border);  /* Dark border color */
     border-radius: 8px;
     outline: none;
-    transition: 0.3s border ease;
+    transition: 0.3s ease;
     color: var(--text-col);  /* Light text color */
 }
 

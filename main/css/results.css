@@ -1,7 +1,7 @@
 #results {
     width: 100%;
     padding: 0 0 0 20px;
-    color: var(--text-col);  /* Light text color for readability */
+    color: var(--text-col);
     background-color: var(--main-background);
     border-top-left-radius: 12px;
 
@@ -13,7 +13,7 @@
 
 #title {
     margin: 16px 0px;
-    color: var(--text-col);  /* Light text color for the title */
+    color: var(--text-col);
 }
 
 #rmSelection {
@@ -24,8 +24,8 @@
 }
 
 .rmEntry {
-    color: var(--text-col);  /* Light text color for entries */
-    background: var(--entry);  /* Dark background for entries */
+    color: var(--text-col);
+    background: var(--entry);
     display: flex;
     align-items: center;
     font-size: 13px;
@@ -37,22 +37,22 @@
 }
 
 .rmEntry:hover {
-    background: var(--entry-hover);  /* Lighter shade on hover */
+    background: var(--entry-hover);
 }
 
 .rmEntry:active {
-    transform: scale(0.97); /* Subtle press effect */
+    transform: scale(0.97);
 }
 
 .rmEntry.selected {
-    background: var(--entry-selected);  /* Selected entry darker shade */
+    background: var(--entry-selected);
     color: white;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Slight shadow for better contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .rmEntry.selected:hover {
-    background: var(--entry-selected-hover);  /* Darker hover effect on selected */
+    background: var(--entry-selected-hover);
 }
 
 #cards {
@@ -61,20 +61,21 @@
     /* gap: 10px; */
     /* margin-bottom: 12px; */
     overflow: auto;
+    padding-right: 10px;
 }
 
 .card {
-    padding: 15px 21px;
-    background-color: var(--card-bg);  /* Dark background for cards */
+    padding: 15px 20px;
+    background-color: var(--card-bg);
     border-radius: 12px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    /* margin-right: 10px;
+    margin-bottom: 10px; */
     text-wrap: nowrap;
 }
 
 .card p {
     margin: 0;
-    color: var(--text-col);  /* Light text color for card paragraphs */
+    color: var(--text-col);
     overflow: auto;
     /* text-overflow: ellipsis; */
 }
@@ -87,4 +88,27 @@
 
 .cardEm {
     background-color: var(--card-em-bg);
+    margin-bottom: 10px;
+}
+
+.ccSection {
+    margin: 5px 0;
+    background-color: var(--ccsection-bg);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 12px;
+}
+
+.ccSectionName {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--ccsection-text);
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 3px 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
