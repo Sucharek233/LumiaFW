@@ -28,14 +28,17 @@ function loadOptions() {
 
     tableColumns.forEach(tableColumn => {
         const wrapper = document.createElement("div");
-        wrapper.className = "advSearchInputContainer";
+        wrapper.className = "advSearchInputContainer search-field-group";
 
         const names = advNames[tableColumn];
-        const tableColumnName = document.createElement("p");
+        const tableColumnName = document.createElement("label");
+        tableColumnName.className = "search-field-label";
         tableColumnName.textContent = `${names[0]}:`;
+        tableColumnName.setAttribute("for", `advSearchInput-${tableColumn}`);
         
-        const tableColumnInput = document.createElement("input");   
-        tableColumnInput.className = "searchBox advSearchInput";
+        const tableColumnInput = document.createElement("input");
+        tableColumnInput.className = "advSearchInput search-field-input";
+        tableColumnInput.id = `advSearchInput-${tableColumn}`;
         tableColumnInput.dataset["column"] = tableColumn;
         tableColumnInput.placeholder = names[1];
 
@@ -43,6 +46,8 @@ function loadOptions() {
         wrapper.append(tableColumnInput);
         advSearchInputs.append(wrapper);
     });
+
+    advSearchInputsContainer.scrollIntoView({behavior: "smooth"});
 }
 
 advSearchInputs.addEventListener("keydown", function(e) {
@@ -91,32 +96,58 @@ function performAdvSearch() {
     function processValue(input) {
         if (typeof(input) == "string") {
             input = input.replaceAll("\\n", " ");
+
             if (input.startsWith("http")) {
                 input = `<a href="${input}">${input}</a>`;
-            }
-
-            if (input == "") {
-                input = "N/A";
             }
         }
 
         return input;
     }
 
+    function getCardRow(label, value) {
+        let row = `
+            <div class="infoRow">
+                  <span class="infoLabel">${label}:</span>
+                  <span class="infoValue">${processValue(value)}</span>
+            </div>
+        `;
+
+        return row;
+    }
+
+    // allValues.forEach(values => {
+    //     const resultEl = document.createElement("div");
+    //     resultEl.className = "advResult";
+        
+    //     let info = "";
+    //     values.forEach((value, index) => {
+    //         if (advExclusions[activeTableSelection].includes(columns[index])) {return;} // what a one-liner
+
+    //         const processedValue = processValue(value);
+    //         const columnName = advNames[columns[index]][0];
+    //         info += `<p><b>${columnName}:</b> ${processedValue}</p>`;
+    //     });
+    //     resultEl.innerHTML = info;
+
+    //     advResults.append(resultEl);
+    // });
+
     allValues.forEach(values => {
         const resultEl = document.createElement("div");
-        resultEl.className = "advResult";
+        resultEl.className = "card cardContent";
         
         let info = "";
         values.forEach((value, index) => {
             if (advExclusions[activeTableSelection].includes(columns[index])) {return;} // what a one-liner
 
-            const processedValue = processValue(value);
-            const columnName = advNames[columns[index]][0];
-            info += `<p><b>${columnName}:</b> ${processedValue}</p>`;
+            info += getCardRow(columns[index], value);
         });
+        
         resultEl.innerHTML = info;
 
         advResults.append(resultEl);
     });
+
+    advResults.scrollIntoView({behavior: "smooth"});
 }

@@ -3,7 +3,7 @@ a {
     color: var(--hyperlink);  /* Lighter blue color for dark theme */
     font-weight: 500;
     position: relative;
-    transition: color 0.2s ease;
+    transition: 0.2s ease;
 }
 
 a:after {

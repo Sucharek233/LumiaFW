@@ -1,9 +1,11 @@
 #results {
-    width: 100%;
+    grid-area: main;
+    
+    /* width: 100%; */
     padding: 0 0 0 20px;
-    color: var(--text-col);
-    background-color: var(--main-background);
-    border-top-left-radius: 12px;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    /* border-top-left-radius: 12px; */
 
     display: flex;
     flex-direction: column;
@@ -17,83 +19,73 @@
 }
 
 #rmSelection {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
+    display: inline-flex;
+    gap: .5rem;
+    /* background: var(--bg-secondary); */
+    /* padding: .75rem; */
+    /* border-radius: var(--border-radius); */
+    /* border: 2px solid var(--border-primary);
+    box-shadow: var(--shadow-md); */
+    position: relative;
+    width: fit-content;
+    margin-bottom: 10px;
 }
 
 .rmEntry {
-    color: var(--text-col);
-    background: var(--entry);
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 15px;
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-primary);
+    color: var(--text-secondary);
+    padding: .75rem 1.25rem;
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
-    border-radius: 6px;
-    transition: 0.2s;
+    transition: var(--transition);
+    font-size: .9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: JetBrains Mono,monospace;
+    position: relative
 }
 
 .rmEntry:hover {
-    background: var(--entry-hover);
-}
-
-.rmEntry:active {
-    transform: scale(0.97);
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border-color: var(--border-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md)
 }
 
 .rmEntry.selected {
-    background: var(--entry-selected);
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg,var(--primary),var(--primary-light));
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px)
 }
 
-.rmEntry.selected:hover {
-    background: var(--entry-selected-hover);
+.rmEntry.selected:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,var(--primary),var(--accent));
+    border-radius: var(--border-radius-sm);
+    z-index: -1;
+    opacity: .3
 }
 
-#cards {
-    display: flex;
-    flex-direction: column;
-    /* gap: 10px; */
-    /* margin-bottom: 12px; */
-    overflow: auto;
-    padding-right: 10px;
-}
 
-.card {
-    padding: 15px 20px;
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    /* margin-right: 10px;
-    margin-bottom: 10px; */
-    text-wrap: nowrap;
+.ccSectionEm .infoValue {
+    max-width: 100%;
 }
-
-.card p {
-    margin: 0;
-    color: var(--text-col);
-    overflow: auto;
-    /* text-overflow: ellipsis; */
-}
-
-.card p::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    display: none;
-}
-
-.cardEm {
-    background-color: var(--card-em-bg);
-    margin-bottom: 10px;
+.ccSectionEm .countryBadge {
+    background: var(--emergency);
 }
 
 .ccSection {
     margin: 5px 0;
-    background-color: var(--ccsection-bg);
+    background-color: var(--bg-elevated);
     padding: 8px;
     display: flex;
     flex-direction: column;

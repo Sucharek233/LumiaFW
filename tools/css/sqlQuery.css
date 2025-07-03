@@ -17,13 +17,25 @@
     display: flex;
     flex-direction: column;
     overflow: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+#sqlResults .cardContent {
+    padding: 20px 28px 28px 28px;
+}
+
+#sqlResults .infoValue {
+    max-width: 80%;
+    text-overflow: unset;
+    overflow: auto;
 }
 
 .sqlResult {
     padding: 15px 21px;
     background-color: var(--card-bg);  /* Dark background for cards */
     border-radius: 12px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     margin-bottom: 10px;
     text-wrap: nowrap;
 }

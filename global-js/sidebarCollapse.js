@@ -1,3 +1,3 @@
 function toggleSidebar() {
-    sidebar.classList.toggle("sidebarAnim");
+    sidebar.classList.toggle("open");
 }

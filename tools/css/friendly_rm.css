@@ -5,20 +5,25 @@
 }
 
 .rmResult {
-    /* height: fit-content; */
-    background-color: var(--cont-bg);
     padding: 10px 14px;
     margin: 0px 6px 5px 0px;
-    border-radius: 8px;
     flex-grow: 1;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-primary);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    box-shadow: var(--shadow-sm);
 }
 .rmResult h4 {
     font-size: 15pt;
     margin: 5px 0 0 0;
+    color: var(--text-accent);
 }
 .rmResult p {
     margin: 6px 0;
 }
 .rmResult span {
-    background-color: var(--card-em-bg);
+    background-color: color-mix(in srgb, var(--accent) 20%, transparent); /* might change */
 }

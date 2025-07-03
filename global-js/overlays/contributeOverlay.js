@@ -1,10 +1,3 @@
-function showContributeOverlay() {
-    contributeOverlay.classList.add("shown");
-}
-function hideContributeOverlay() {
-    contributeOverlay.classList.remove("shown");
-}
-
 const contributeResults = {
     rm: undefined,
     country_code: undefined,
@@ -23,23 +16,32 @@ function loadContributeOverlay() {
         const info = advNames[field];
 
         const container = document.createElement("div");
-        container.className = "contributeInput";
+        container.className = "input-group";
 
-        const inputInfo = document.createElement("p");
-        let textContent = info[0];
-        if (requiredContributeFields.includes(field)) {
-            textContent += "*";
+        let input;
+        if (field == "notes") {
+            input = document.createElement("textarea");
+            input.setAttribute("rows", 3);
+            container.className = "input-group full-width";
+        } else {
+            input = document.createElement("input");
         }
-        inputInfo.textContent = `${textContent}:`;
-
-        const input = document.createElement("input");
-        input.className = "searchBox contributeInputEl";
+        
+        input.id = `contribute-${field}`;
+        input.className = "contributeInputEl";
         input.placeholder = info[1];
         input.onchange = function() {
             contributeResults[field] = input.value;
         };
 
-        container.append(inputInfo);
+        const label = document.createElement("label");
+        label.setAttribute("for", `contribute-${field}`);
+        label.textContent = info[0];
+        if (requiredContributeFields.includes(field)) {
+            label.className = "required";
+        }
+        
+        container.append(label);
         container.append(input);
 
         contributeInputs.append(container);
@@ -55,7 +57,7 @@ async function prepareContribution() {
     }
 
     if (notFilledOut.length != 0) {
-        showOverlayCustom(
+        openInfoDialogCustom(
             "One or more fields not filled out!",
             `Please fill out <b>${notFilledOut.join(", ")}</b> field(s) before sending your contribution!`
         );
@@ -66,6 +68,7 @@ async function prepareContribution() {
     for (let key of Object.keys(contributeResults)) {
         results.push(contributeResults[key]);
     }
+    console.log(results);
     
     const saveVerify = contributeResults.link;
     contributeBtn.textContent = "Sending, please wait...";
@@ -77,11 +80,11 @@ async function prepareContribution() {
     contributeBtn.removeAttribute("disabled");
     
     if (saveVerify == verify["link"]) {
-        showOverlayCustom(
+        closeDialog();
+        openInfoDialogCustom(
             "Success!",
             `Thank you for sending your contribution :D`
         );
-        hideContributeOverlay();
 
         const clearElements = document.getElementsByClassName("contributeInputEl");
         for (let clearElement of clearElements) {
@@ -92,7 +95,7 @@ async function prepareContribution() {
             contributeResults[key] = undefined;
         }
     } else {
-        showOverlayCustom(
+        openInfoDialogCustom(
             "Failed!",
             `Your contribution wasn't sent successfully.<br>
              Please try again later or contact me personally (contacts are in the About section).`

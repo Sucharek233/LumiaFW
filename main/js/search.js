@@ -1,10 +1,19 @@
 function performSearch() {
     modelEntires.forEach(modelEntry => {
         modelEntry.style.display = "flex";
+        const groups = document.getElementsByClassName("modelGroup");
+        for (const group of groups) {
+            group.style.display = "flex";
+        }
     });
 
     const text = searchInput.value;
     if (text.trim() == "") return;
+
+    const groups = document.getElementsByClassName("modelGroup");
+    for (const group of groups) {
+        group.style.display = "none";
+    }
 
     const targets = searchLumia(text);
     if (!targets) {
@@ -24,8 +33,19 @@ function performSearch() {
         }
     });
     
+    let lastModel = "";
     modelEntires.forEach(modelEntry => {
-        if (!models.includes(modelEntry.textContent)) {
+        if (models.includes(modelEntry.textContent)) {
+            modelEntry.style.display = "flex";
+
+            const model = modelEntry.textContent;
+            if (lastModel != model) {
+                const series = getLumiaSeries(model);
+                const group = document.getElementById(`series-${series}`);
+                group.style.display = "flex";
+            }
+            lastModel = model;
+        } else {
             modelEntry.style.display = "none";
         }
     });

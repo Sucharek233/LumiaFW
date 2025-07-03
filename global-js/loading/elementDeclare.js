@@ -4,6 +4,11 @@ let overlay;
 let overlayTitle;
 let overlayText;
 
+let infoDialogTitle;
+let infoDialogText;
+
+let supabaseCounter;
+
 let contributeOverlay;
 let contributeInputs;
 let contributeBtn;
@@ -18,6 +23,11 @@ function loadGlobalElementDeclaration() {
     overlay = document.getElementById("infoOverlay");
     overlayTitle = document.getElementById("overlayTitle");
     overlayText = document.getElementById("overlayText");
+
+    infoDialogTitle = document.getElementById("infoDialogTitle");
+    infoDialogText = document.getElementById("infoDialogText");
+
+    supabaseCounter = document.getElementById("supabaseCounter");
 
     contributeOverlay = document.getElementById("contributeOverlay");
     contributeInputs = document.getElementById("contributeInputs");

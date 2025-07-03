@@ -1,0 +1,240 @@
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000c;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s cubic-bezier(.4,0,.2,1)
+}
+
+.dialog-overlay.active {
+    opacity: 1;
+    visibility: visible
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.9);
+    background: var(--bg-card);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--border-radius);
+    z-index: 201;
+    min-width: 420px;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 75%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s cubic-bezier(.4,0,.2,1);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column
+}
+
+.dialog * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.dialog.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1)
+}
+
+.dialog.contribute {
+    width: 90vw;
+    max-width: 1200px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--border-primary);
+    flex-shrink: 0
+}
+
+.dialog-header h3 {
+    color: var(--text-primary);
+    font-size: 1.375rem;
+    font-weight: 700
+}
+
+.dialog-close {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-primary);
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.dialog-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-secondary)
+}
+
+.dialog-content {
+    color: var(--text-primary);
+    padding: 32px 32px 6px 32px;
+    overflow-y: auto;
+    flex: 1
+}
+
+#feedbackInputs {
+    padding: 18px 32px 6px 32px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+#feedbackInputs label {
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr
+}
+
+.form-grid .input-group.full-width {
+    grid-column: 1 / -1
+}
+
+.input-group {
+    margin-bottom: 0
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-primary);
+    font-size: .925rem;
+    font-weight: 600;
+    margin-bottom: .75rem
+}
+
+.input-group label.required:after {
+    content: " *";
+    color: var(--emergency)
+}
+
+.input-group input,.input-group textarea {
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: .875rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: .925rem;
+    transition: var(--transition);
+    resize: vertical
+}
+
+.input-group input:focus,.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: var(--glow);
+    background: var(--bg-card)
+}
+
+.input-group input::-moz-placeholder,.input-group textarea::-moz-placeholder {
+    color: var(--text-muted)
+}
+
+.input-group input::placeholder,.input-group textarea::placeholder {
+    color: var(--text-muted)
+}
+
+.dialog-actions {
+    padding: 0 2rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-shrink: 0
+}
+.btn {
+    padding: .75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: .925rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none
+}
+
+.btn-primary {
+    background: linear-gradient(135deg,var(--primary),var(--primary-light));
+    color: #fff;
+    box-shadow: var(--shadow-md)
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg)
+}
+
+.btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-primary)
+}
+
+.btn-secondary:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-secondary)
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns:1fr 1fr
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-grid {
+        grid-template-columns:1fr 1fr 1fr
+    }
+}
+
+@media (max-width: 768px) {
+    .dialog {
+        min-width: 90vw;
+        max-height: 90vh;
+        max-width: none
+    }
+
+    .dialog.contribute {
+        min-width: 95vw;
+        width: 95vw
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+#infoDialog {
+    z-index: 202;
+}

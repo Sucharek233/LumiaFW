@@ -39,15 +39,29 @@ async function runSqlQuery() {
         return input;
     }
 
+    function getCardRow(label, value) {
+        let row = `
+            <div class="infoRow">
+                  <span class="infoLabel">${label}:</span>
+                  <span class="infoValue">${processValue(value)}</span>
+            </div>
+        `;
+
+        return row;
+    }
+
     allValues.forEach(values => {
         const resultEl = document.createElement("div");
-        resultEl.className = "sqlResult";
+        resultEl.className = "card cardContent";
+        // let innerHTML = `
+        //     <div class="cardContent">
+        // `;
         
         let info = "";
         values.forEach((value, index) => {
-            const processedValue = processValue(value);
-            info += `<p><b>${columns[index]}:</b> ${processedValue}</p>`;
+            info += getCardRow(columns[index], value);
         });
+        // innerHTML += "</div>";
         resultEl.innerHTML = info;
 
         sqlResults.append(resultEl);

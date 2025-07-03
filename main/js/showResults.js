@@ -42,35 +42,60 @@ function loadFirmwareCards(rm, rmEl) {
         }
     }
 
-    selectStyleResults(rmEl);
-    removeByClassName("card");
-    removeByClassName("ccSection");
-    let infos = getRM(rm);
-    infos = sortResultsByLinks(infos, 5);
-    let emFiles = getEmergency(rm);
-    
-    if (emFiles) {
-        emFiles = sortResultsByLinks(emFiles, 1);
-        const emFilesEl = document.createElement("div");
-        emFilesEl.className = "card cardEm";
-        let emFilesText = `<p><b>Emergency files</b> (mirrors):</p>
-                            <p><b>Collection of all emergency files:</b> <a href="https://protobetatest.com/download/lumia-emergency-files">https://protobetatest.com/download/lumia-emergency-files</a></p>`;
-        emFiles.forEach(emFile => {
-            emFilesText += `<br>
-                <p><b>File name:</b> ${emFile[0]}</p>
-                <p><b>Link:</b> <a href=${emFile[1]}>${emFile[1]}</a></p>
-            `;
-        });
-        emFilesEl.innerHTML = emFilesText;
-        cards.append(emFilesEl);
-    } else {
-        const emFilesEl = document.createElement("div");
-        emFilesEl.className = "card cardEm";
-        emFilesEl.innerHTML = `<p><b>No emergency files available for this model!</b</p>`;
-        cards.append(emFilesEl);
+    function getCardRow(label, value, link = 0) {
+        let row = `
+            <div class="infoRow">
+                  <span class="infoLabel">${label}:</span>
+                  <span class="infoValue">
+        `;
+        if (link) {
+            row += `<a href="${value}">${value}</a>`;
+        } else {
+            row += value;
+        }
+        row += "</div>";
+
+        return row;
     }
 
     let ccSections = {};
+
+    selectStyleResults(rmEl);
+    removeByClassName("card");
+    removeByClassName("ccSection");
+
+    let infos = getRM(rm);
+    infos = sortResultsByLinks(infos, 5);
+
+    let emFiles = getEmergency(rm);
+    if (emFiles) {
+        ccSections["Emergency Files"] = [];
+        
+        emFiles = sortResultsByLinks(emFiles, 1);
+        emFiles.unshift(["Collection of all emergency files", "https://protobetatest.com/download/lumia-emergency-files"]);
+        emFiles.forEach(emFile => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+                <div class="countryBadge">
+                    Emergency Files
+                </div>
+                <div class="cardContent">
+                    ${getCardRow("Info", emFile[0])}
+                    ${getCardRow("Link", emFile[1], 1)}
+                </div>
+            `;
+            ccSections["Emergency Files"].push(card);
+
+            cards.append(card);
+        });
+    } else {
+        // const emFilesEl = document.createElement("div");
+        // emFilesEl.className = "card cardEm";
+        // emFilesEl.innerHTML = `<p><b>No emergency files available for this model!</b</p>`;
+        // cards.append(emFilesEl);
+    }
 
     infos.forEach(info => {
         const card = document.createElement("div");
@@ -83,12 +108,17 @@ function loadFirmwareCards(rm, rmEl) {
         });
 
         card.innerHTML = `
-            <p><b>Hardware model:</b> ${rm}</p>
-            <p><b>Country code:</b> ${info[1]}</p>
-            <p><b>Country info:</b> ${info[2]}</p>
-            <p><b>Firmware:</b> ${info[3]}</p>
-            <p><b>File name:</b> ${info[4]}</p>
-            <p><b>Link:</b> <a href="${info[5]}">${info[5]}</a></p>
+            <div class="countryBadge">
+                ${info[1]}
+            </div>
+            <div class="cardContent">
+                ${getCardRow("Hardware model", rm)}
+                ${getCardRow("Country code", info[1])}
+                ${getCardRow("Country info", info[2])}
+                ${getCardRow("Firmware", info[3])}
+                ${getCardRow("File name", info[4])}
+                ${getCardRow("Link", info[5], 1)}
+            </div>
         `;
 
         if (!ccSections[info[1]]) {
@@ -113,13 +143,23 @@ function loadFirmwareCards(rm, rmEl) {
     ccSectionsKeys.forEach(cc => {
         const section = document.createElement("div");
         section.className = "ccSection";
+        if (cc == "Emergency Files") {
+            section.className = "ccSection ccSectionEm";
+        }
 
-        const sectionName = document.createElement("p");
-        sectionName.className = "ccSectionName";
-        sectionName.textContent = cc;
-        section.append(sectionName);
+        // const sectionName = document.createElement("p");
+        // sectionName.className = "ccSectionName";
+        // sectionName.textContent = cc;
+        // section.append(sectionName);
 
-        ccSections[cc].forEach(firmwareCard => {
+        ccSections[cc].forEach((firmwareCard, index) => {
+            const ccSectionHeader = firmwareCard.children[0];
+            if (index == 0) {
+                section.append(ccSectionHeader);
+            } else {
+                ccSectionHeader.remove();
+            }
+            
             section.append(firmwareCard);
         });
 
@@ -129,14 +169,14 @@ function loadFirmwareCards(rm, rmEl) {
 }
 
 function showResults(model, rms) {
-    title.innerText = `Showing results for ${model}`;
+    title.innerText = model;
     removeByClassName("rmEntry");
     removeByClassName("card");
     removeByClassName("ccSection");
 
     let rmEntries = [];
     rms.forEach(rm => {
-        const rmEl = document.createElement("div");
+        const rmEl = document.createElement("button");
         rmEl.className = "rmEntry";
         rmEl.textContent = rm;
 

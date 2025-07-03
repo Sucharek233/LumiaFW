@@ -5,9 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lumia FW Tools</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="../global-css/main.css">
         <link rel="stylesheet" href="../global-css/header.css">
+        <link rel="stylesheet" href="../global-css/dialogs.css">
         <link rel="stylesheet" href="../global-css/sidebar.css">
+        <link rel="stylesheet" href="../global-css/cards.css">
         <link rel="stylesheet" href="../global-css/scrollbars.css">
         <link rel="stylesheet" href="../global-css/infoOverlay.css">
         <link rel="stylesheet" href="../global-css/hyperlinks.css">
@@ -65,42 +71,59 @@
         </script>
     </head>
     <body>
-        <!-- The same as in the main page -->
-        <div id="header"></div>
+        <div class="app-container">
+            <!-- The same as in the main page -->
+            <div id="header"></div>
 
-        
-        <div id="mainContent">
-            <div id="sidebar">
-                <button id="redirectButton" onclick="window.open('/LumiaFW/main', '_self');">Main Page</button>
+            <div id="sidebar" class="open">
+                <div id="sidebarActions">
+                    <button class="btn btn-secondary" onclick="window.open('/LumiaFW/main', '_self');">Main Page</button>
+                </div>
+                
                 <div id="modelContainer">
-                    <div class="modelEntry" id="rm-btn" onclick="openTool('rm')">RM <-> Model name</div>
-                    <div class="modelEntry" id="advSearch-btn" onclick="openTool('advSearch')">Advanced search</div>
-                    <div class="modelEntry" id="sqlQuery-btn" onclick="openTool('sqlQuery')">Run SQL Queries</div>
+                    <button class="modelEntry" id="rm-btn" onclick="openTool('rm')">RM <-> Model name</button>
+                    <button class="modelEntry" id="advSearch-btn" onclick="openTool('advSearch')">Advanced search</button>
+                    <button class="modelEntry" id="sqlQuery-btn" onclick="openTool('sqlQuery')">Run SQL Queries</button>
                 </div>
             </div>
 
             <div id="tools">
                 <h2 id="title">Please select a tool</h2>
                 <div class="toolContainer" id="rm">
-                    <p class="toolInfo">Input RM-XXX or Lumia XXX</p>
-                    <input id="rmInput" class="searchBox" placeholder="Search... (RM-XXX, Lumia XXX)" oninput="performSearch()">
+                    <div class="toolHeader">
+                        <p class="toolInfo">Input RM-XXX or Lumia XXX</p>
+                        <input id="rmInput" class="searchBox" placeholder="Search... (RM-XXX, Lumia XXX)" oninput="performSearch()">
+                    </div>
                     <h3>Results</h3>
                     <div id="rmResults"></div>
                 </div>
 
                 <div class="toolContainer" id="advSearch">
-                    <p class="toolInfo">Empty input fields will be ignored! The usage of % and _ experssions is allowed.</p>
-                    <div id="advTableSelectionContainer">
-                        <p class="toolInfo">Please select a table:</p>
-                        <select id="advTableSelect">
-                            <option disabled selected value> -- select a table -- </option>
-                        </select>
-                    </div>
-                    <div id="advSearchInputsContainer">
-                        <div id="advSearchInputs"></div>
-                        <button onclick="performAdvSearch()" id="advSearchBtn" class="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 32 32"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"></path></svg>
-                        </button>
+                    <div class="toolHeader">
+                        <div class="search-section">
+                            <div class="search-section-header">
+                                <h3>Database Selection</h3>
+                                <p class="search-section-description">Select which database table to search through</p>
+                            </div>
+                            <select id="advTableSelect">
+                                <option disabled selected value> -- select a table -- </option>
+                            </select>
+                        </div>
+
+                        <div class="search-section" id="advSearchInputsContainer">
+                            <div class="search-section-header">
+                                <h3>Search Criteria</h3>
+                                <p class="search-section-description">
+                                    Enter your search criteria in the fields below. 
+                                    Empty input fields will be ignored! 
+                                    The usage of % and _ experssions is allowed.
+                                </p>
+                            </div>
+                            <div id="advSearchInputs" class="search-fields-grid"></div>
+                            <button onclick="performAdvSearch()" id="advSearchBtn" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 32 32"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"></path></svg>
+                            </button>
+                        </div>
                     </div>
 
                     <h3>Results</h3>
@@ -108,18 +131,18 @@
                 </div>
 
                 <div class="toolContainer" id="sqlQuery">
-                    <p class="toolInfo">Input a SQL query</p>
-                    <div id="sqlSearchInputContainer">
-                        <input id="sqlInput" class="searchBox" placeholder="SELECT * FROM firmware LIMIT 100">
-                        <button class="button" onclick="runSqlQuery()">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 32 32"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"></path></svg>
-                        </button>
+                    <div class="toolHeader">
+                        <p class="toolInfo">Input a SQL query</p>
+                        <div id="sqlSearchInputContainer">
+                            <input id="sqlInput" class="searchBox noIcon" placeholder="SELECT * FROM firmware LIMIT 100">
+                            <button class="btn btn-primary" onclick="runSqlQuery()">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 32 32"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"></path></svg>
+                            </button>
+                        </div>
                     </div>
                     <h3>Results</h3>
                     <div id="sqlResults"></div>
                 </div>
-                
-                <button id="collapseBtn" onclick="toggleSidebar()">☰</button>
             </div>
         </div>
     </body>

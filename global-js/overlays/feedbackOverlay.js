@@ -1,10 +1,3 @@
-function showFeedbackOverlay() {
-    feedbackOverlay.classList.add("shown");
-}
-function hideFeedbackOverlay() {
-    feedbackOverlay.classList.remove("shown");
-}
-
 const feedbackResults = {
     title: undefined,
     message: undefined
@@ -17,20 +10,32 @@ function loadFeedbackOverlay() {
         const info = advNames[field];
 
         const container = document.createElement("div");
-        container.className = "feedbackInput";
+        container.className = "input-group";
 
-        let input; // man this sucks
+        let input;
         if (field == "message") {
             input = document.createElement("textarea");
+            input.setAttribute("rows", 4);
         } else {
             input = document.createElement("input");
         }
-        input.className = "searchBox feedbackInputEl";
+        
+        input.id = `feedback-${field}`;
+        input.className = "feedbackInputEl";
         input.placeholder = info[1];
+        if (field == "message") {input.setAttribute("placeholder", "Enter your feedback");} // I'll remove this I swear
         input.onchange = function() {
             feedbackResults[field] = input.value;
         };
 
+        const label = document.createElement("label");
+        label.setAttribute("for", `feedback-${field}`);
+        label.textContent = info[0];
+        if (requiredFeedbackFields.includes(field)) {
+            label.className = "required";
+        }
+        
+        container.append(label);
         container.append(input);
 
         feedbackInputs.append(container);
@@ -46,7 +51,7 @@ async function prepareFeedback() {
     }
 
     if (notFilledOut.length != 0) {
-        showOverlayCustom(
+        openInfoDialogCustom(
             "One or more fields not filled out!",
             `Please fill out <b>${notFilledOut.join(", ")}</b> field(s) before sending feedback!`
         );
@@ -68,11 +73,11 @@ async function prepareFeedback() {
     feedbackBtn.removeAttribute("disabled");
     
     if (saveVerify == verify["message"]) {
-        showOverlayCustom(
+        closeDialog();
+        openInfoDialogCustom(
             "Success!",
             `Thank you for sending feedback :D`
         );
-        hideFeedbackOverlay();
 
         const clearElements = document.getElementsByClassName("feedbackInputEl");
         for (let clearElement of clearElements) {
@@ -83,7 +88,7 @@ async function prepareFeedback() {
             feedbackResults[key] = undefined;
         }
     } else {
-        showOverlayCustom(
+        openInfoDialogCustom(
             "Failed!",
             `Your feedback wasn't sent successfully.<br>
              Please try again later or contact me personally (contacts are in the About section).`

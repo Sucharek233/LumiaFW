@@ -1,5 +1,5 @@
 const text = {
-    "cr": [
+    "credits": [
         "Credits",
         `Thanks to all of these sources for making this site possible!<br><br>
         
@@ -27,20 +27,6 @@ const text = {
         <a href="http://discord.com/users/350363043852713984">mainnn on Discord</a><br><br>
 
         More are on the way!`
-    ],
-    "abt": [
-        "About",
-        () => `Welcome to Lumia FW! An alternative to LumiaFirmware made by Sucharek233.<br><br>
-        
-        The goal of this site is to provide a quick and easy way to download firmware for your Lumia device.<br><br>
-
-        You can contact me on:<br>
-        Reddit: <a href="https://reddit.com/u/Sucharek233">u/Sucharek233</a><br>
-        Telegram: <a href="https://t.me/Sucharekk">@Sucharekk</a><br>
-        Discord: <a href="https://discord.com/users/571780527728623626">suchare</a><br><br>
-        
-        You can also check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.<br>
-        Database check (counter): ${supaCounter ?? "not here yet :) reopen About"}`
     ]
 };
 
@@ -49,7 +35,7 @@ function showOverlay(type) {
 
     const info = text[type];
     overlayTitle.textContent = info[0];
-    overlayText.innerHTML = typeof info[1] == 'function' ? info[1]() : info[1]; // what a line
+    overlayText.innerHTML = info[1];
 }
 
 function showOverlayCustom(title, message) {
@@ -65,8 +51,56 @@ function hideOverlay() {
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-      hideOverlay();
-      hideContributeOverlay();
-      hideFeedbackOverlay();
+    //   hideOverlay();
+    //   hideContributeOverlay();
+    //   hideFeedbackOverlay();
+        closeDialog();
     }
 });
+
+
+
+function openDialog(dialogType) {
+    const overlay = document.getElementById('dialogOverlay');
+    const dialog = document.getElementById(dialogType + 'Dialog');
+    
+    if (overlay && dialog) {
+        overlay.classList.add('active');
+        dialog.classList.add('active');
+        
+        // Store last focused element
+        window.lastFocusedElement = document.activeElement;
+    }
+}
+
+function openInfoDialog(category) {
+    const info = text[category];
+    infoDialogTitle.textContent = info[0];
+    infoDialogText.innerHTML = info[1];
+    
+    openDialog("info");
+}
+
+function openInfoDialogCustom(title, content) {
+    if (!text.custom) {
+        text.custom = ["", ""];
+    }
+
+    text.custom[0] = title;
+    text.custom[1] = content;
+    
+    openInfoDialog("custom");
+}
+
+function closeDialog() {
+    const overlay = document.getElementById('dialogOverlay');
+    const dialogs = document.querySelectorAll('.dialog');
+    
+    overlay.classList.remove('active');
+    dialogs.forEach(dialog => dialog.classList.remove('active'));
+    
+    // Restore focus
+    if (window.lastFocusedElement) {
+        window.lastFocusedElement.focus();
+    }
+}

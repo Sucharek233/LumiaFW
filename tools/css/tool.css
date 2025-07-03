@@ -9,6 +9,16 @@
     font-size: 16pt;
 }
 
+.toolContainer .btn {
+    padding: 8px 14px;
+}
+
+.toolHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 0;
+}
+
 .toolInfo {
     margin: 4px 0 12px 0;
 }

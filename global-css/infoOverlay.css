@@ -24,7 +24,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Slightly stronger shadow for depth */
     width: 60%;
-    color: var(--text-col);  /* Light text color for better readability */
+    color: var(--text-primary);
     border: solid 1.5px var(--select-border);
     z-index: 2;
     max-height: 30vh;
@@ -51,7 +51,7 @@
 
 #overlayText {
     margin: 8px 0px;
-    color: var(--text-col);  /* Light text color for overlay text */
+    color: var(--text-primary);
 }
 
 
@@ -60,12 +60,12 @@
     max-height: 60vh;
 }
 
-#contributeInputs, #feedbackInputs {
+/* #contributeInputs, #feedbackInputs {
     display: flex;
     margin: 8px 0;
     gap: 8px;
     flex-direction: column;
-}
+} */
 
 .contributeInput, .feedbackInput {
     display: flex;

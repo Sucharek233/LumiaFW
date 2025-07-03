@@ -1,34 +1,91 @@
-<h2>Lumia FW <span id="version">v0.6.4</span></h2>
-
-<div id="btns">
-    <button onclick="showOverlay('cr')">Credits</button>
-    <button onclick="showFeedbackOverlay()">Feedback</button>
-    <button onclick="showContributeOverlay()">Contribute</button>
-    <button onclick="showOverlay('abt')">About</button>
-</div>
-
-<div id="infoOverlay" class="overlay">
-    <div id="overlayClose" onclick="hideOverlay()" class="overlayClose"></div>
-    <div class="overlayContent">
-        <h2 id="overlayTitle"></h2>
-        <p id="overlayText"></p>
+<div class="header-left">
+    <button class="sidebar-toggle desktop-hidden" onclick="toggleSidebar()" aria-label="Open sidebar" aria-expanded="false">☰</button>
+    <div class="site-info">
+        <h1 class="site-title">LumiaFW</h1>
+        <span class="version">v0.7.0</span>
     </div>
 </div>
 
-<div id="contributeOverlay" class="overlay">
-    <div id="overlayClose" onclick="hideContributeOverlay()" class="overlayClose"></div>
-    <div class="overlayContent">
-        <h2 id="overlayTitle">Contribute</h2>
-        <div id="contributeInputs"></div>
-        <button id="contributeBtn" class="button" onclick="prepareContribution()">Send</button>
+<div class="header-right">
+    <button class="header-icon-btn" onclick="openInfoDialog('credits')" aria-label="Open credits dialog">
+        👥
+        <span class="tooltip">Credits</span>
+    </button>
+    <button class="header-icon-btn" onclick="openDialog('feedback')" aria-label="Open feedback dialog">
+        💬
+        <span class="tooltip">Feedback</span>
+    </button>
+    <button class="header-icon-btn" onclick="openDialog('contribute')" aria-label="Open contribute dialog">
+        🤝
+        <span class="tooltip">Contribute</span>
+    </button>
+    <button class="header-icon-btn" onclick="openDialog('about')" aria-label="Open about dialog">
+        ℹ️
+        <span class="tooltip">About</span>
+    </button>
+</div>
+
+<!-- DIALOGS -->
+<div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog()"></div>
+
+<div class="dialog" id="infoDialog">
+    <div class="dialog-header">
+        <h3 id="infoDialogTitle">Credits</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    
+    <div class="dialog-content" id="infoDialogText"></div>
+
+    <div class="dialog-actions">
+        <button class="btn btn-primary" onclick="closeDialog()">Close</button>
     </div>
 </div>
 
-<div id="feedbackOverlay" class="overlay">
-    <div id="overlayClose" onclick="hideFeedbackOverlay()" class="overlayClose"></div>
-    <div class="overlayContent">
-        <h2 id="overlayTitle">Send Feedback</h2>
-        <div id="feedbackInputs"></div>
-        <button id="feedbackBtn" class="button" onclick="prepareFeedback()">Send</button>
+<div class="dialog" id="feedbackDialog">
+    <div class="dialog-header">
+        <h3>Feedback</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content" id="feedbackInputs"></div>
+    <div class="dialog-actions">
+        <button class="btn btn-secondary" onclick="closeDialog()">Cancel</button>
+        <button class="btn btn-primary" id="feedbackBtn" onclick="prepareFeedback()">Send</button>
+    </div>
+</div>
+
+<div class="dialog contribute" id="contributeDialog">
+    <div class="dialog-header">
+        <h3>Contribute Firmware</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content">
+        <div class="form-grid" id="contributeInputs"></div>
+    </div>
+    <div class="dialog-actions">
+        <button class="btn btn-secondary" onclick="closeDialog()">Cancel</button>
+        <button class="btn btn-primary" id="contributeBtn" onclick="prepareContribution()">Send</button>
+    </div>
+</div>
+
+<div class="dialog" id="aboutDialog">
+    <div class="dialog-header">
+        <h3>About</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content">
+        Welcome to Lumia FW! An alternative to LumiaFirmware made by Sucharek233.<br><br>
+        
+        The goal of this site is to provide a quick and easy way to download firmware for your Lumia device.<br><br>
+
+        You can contact me on:<br>
+        Reddit: <a href="https://reddit.com/u/Sucharek233">u/Sucharek233</a><br>
+        Telegram: <a href="https://t.me/Sucharekk">@Sucharekk</a><br>
+        Discord: <a href="https://discord.com/users/571780527728623626">suchare</a><br><br>
+        
+        You can also check this project out on <a href="https://github.com/Sucharek233/LumiaFW">GitHub</a>.<br>
+        Database check (counter): <span id="supabaseCounter">Loading...</span>
+    </div>
+    <div class="dialog-actions">
+        <button class="btn btn-primary" onclick="closeDialog()">Close</button>
     </div>
 </div>
