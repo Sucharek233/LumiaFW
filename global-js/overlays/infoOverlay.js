@@ -92,6 +92,18 @@ function openInfoDialogCustom(title, content) {
     openInfoDialog("custom");
 }
 
+function openLinkDialog(title, content, url) {
+    linkDialogTitle.textContent = title;
+    linkDialogText.innerHTML = content;
+
+    linkDialogBtn.onclick = function() {
+        openLink(url, true);
+        closeDialog();
+    };
+    
+    openDialog("link");
+}
+
 function closeDialog() {
     const overlay = document.getElementById('dialogOverlay');
     const dialogs = document.querySelectorAll('.dialog');

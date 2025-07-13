@@ -32,7 +32,7 @@ async function runSqlQuery() {
             input = input.replaceAll("\\n", " ");
 
             if (input.startsWith("http")) {
-                input = `<a href="${input}">${input}</a>`;
+                input = `<a href="javascript:openLink('${input}')">${input}</a>`;
             }
         }
 

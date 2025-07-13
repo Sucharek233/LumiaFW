@@ -41,6 +41,21 @@
     </div>
 </div>
 
+<div class="dialog" id="linkDialog">
+    <div class="dialog-header">
+        <h3 id="linkDialogTitle">Warnings</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    
+    <div class="dialog-content" id="linkDialogText"></div>
+
+    <div class="dialog-actions">
+        <button class="btn btn-secondary" onclick="closeDialog()">Close</button>
+        <button class="btn btn-secondary" id="linkDialogBtnDontShowAgain">Don't Show Again</button>
+        <button class="btn btn-primary" id="linkDialogBtn">Proceed</button>
+    </div>
+</div>
+
 <div class="dialog" id="feedbackDialog">
     <div class="dialog-header">
         <h3>Feedback</h3>

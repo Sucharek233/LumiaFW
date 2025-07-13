@@ -49,7 +49,8 @@ function loadFirmwareCards(rm, rmEl) {
                   <span class="infoValue">
         `;
         if (link) {
-            row += `<a href="${value}">${value}</a>`;
+            // row += `<a href="${value}">${value}</a>`;
+            row += `<a href="javascript:openLink('${value}')">${value}</a>`;
         } else {
             row += value;
         }
