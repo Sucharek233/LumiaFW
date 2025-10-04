@@ -2,7 +2,7 @@
     <button class="sidebar-toggle desktop-hidden" onclick="toggleSidebar()" aria-label="Open sidebar" aria-expanded="false">☰</button>
     <div class="site-info">
         <h1 class="site-title">LumiaFW</h1>
-        <span class="version">v0.7.0</span>
+        <span class="version">v0.8.0</span>
     </div>
 </div>
 
@@ -22,6 +22,10 @@
     <button class="header-icon-btn" onclick="openDialog('about')" aria-label="Open about dialog">
         ℹ️
         <span class="tooltip">About</span>
+    </button>
+    <button class="header-icon-btn" onclick="openDialog('lumiadb')" aria-label="Open LumiaDB dialog">
+        <img src="../img/ldb_logo.svg" style="width: 100%; height: 100%;">
+        <span class="tooltip">LumiaDB</span>
     </button>
 </div>
 
@@ -102,5 +106,20 @@
     </div>
     <div class="dialog-actions">
         <button class="btn btn-primary" onclick="closeDialog()">Close</button>
+    </div>
+</div>
+
+<div class="dialog" id="lumiadbDialog">
+    <div class="dialog-header">
+        <h3>LumiaDB: A Better Site for Firmware is Here!</h3>
+        <button class="dialog-close" onclick="closeDialog()">×</button>
+    </div>
+    <div class="dialog-content lumiadbContent">
+            <p>Clean UI, More Tools, Device Info, Guides and much more!</p>
+            <img src="../img/ldb_preview.png" onclick="window.open('https://lumiadb.com')">
+    </div>
+    <div class="dialog-actions">
+        <button class="btn btn-secondary" onclick="closeDialog()">Stay Here</button>
+        <button class="btn btn-primary" id="contributeBtn" onclick="window.open('https://lumiadb.com')">Take Me There!</button>
     </div>
 </div>

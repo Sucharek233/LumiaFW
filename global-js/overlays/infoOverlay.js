@@ -27,6 +27,12 @@ const text = {
         <a href="http://discord.com/users/350363043852713984">mainnn on Discord</a><br><br>
 
         More are on the way!`
+    ],
+    "newSite": [
+        "LumiaDB: A Better Site for Firmware is Here!",
+        `Clean UI, More Tools, Device Info, Guides and much more!<br>
+        Brought to you by <a href="">@itzdatmc</a>
+        <iframe src="https://lumiadb.com"></iframe>`
     ]
 };
 

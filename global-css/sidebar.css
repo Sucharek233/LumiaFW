@@ -266,7 +266,7 @@
         left: 0;
         width: var(--sidebar-width);
         height: calc(100vh - var(--header-height));
-        z-index: 100;
+        z-index: 1;
         transform: translate(-100%);
         transition: var(--transition);
     }
