@@ -120,29 +120,12 @@
     width: 0;
 }
 
-#redirectButton {
-    padding: 6px 8px;
-    cursor: pointer;
-    background-color: var(--search-bg);  /* Dark background like the search box */
-    border: 2px solid var(--search-border);  /* Dark border color */
-}
-
-#redirectButton:hover {
-    background-color: var(--entry-hover); /* Slightly lighter on hover */
-    border-color: var(--entry-selected-hover);
-}
-
-#redirectButton:active {
-    background-color: var(--entry-selected); /* Even darker when clicked */
-    transform: scale(0.97); /* Subtle press effect */
-}
-
 #modelContainer {
     flex: 1;
     padding: 0 6px 8px 4px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--border-secondary) transparent
+    scrollbar-color: var(--border-secondary) transparent;
 }
 
 #modelContainer::-webkit-scrollbar {
@@ -156,38 +139,6 @@
 #modelContainer::-webkit-scrollbar-thumb {
     background: var(--border-secondary);
     border-radius: 2px
-}
-
-.model-group {
-    margin-bottom: 2rem
-}
-
-.group-title {
-    font-size: .8rem;
-    font-weight: 700;
-    color: var(--text-accent);
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    margin-bottom: 1rem;
-    padding: 0 .5rem;
-    display: flex;
-    align-items: center;
-    gap: .5rem
-}
-
-.group-title:before {
-    content: "";
-    width: 3px;
-    height: 12px;
-    background: var(--accent);
-    border-radius: 2px
-}
-
-.model-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: .25rem
 }
 
 .modelEntry {
@@ -260,7 +211,7 @@
 }
 
 @media (max-width: 768px) {
-        #sidebar {
+    #sidebar {
         position: fixed !important;
         top: var(--header-height);
         left: 0;

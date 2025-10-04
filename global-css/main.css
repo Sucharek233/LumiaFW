@@ -115,14 +115,6 @@ body {
     background-color: var(--main-background);
 }
 
-#mainContent {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: var(--cont-bg);
-}
-
 button:focus, a:focus, input:focus, textarea:focus, select:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;

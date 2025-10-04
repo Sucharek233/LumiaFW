@@ -1,14 +1,3 @@
-#advTableSelectionContainer {
-    display: flex;
-    align-items: baseline;
-    margin: 4px 0 12px 0;
-    gap: 6px;
-}
-
-#advTableSelectionContainer p {
-    margin: 0;
-}
-
 #advSearch select {
     width: -webkit-fill-available;
     background: var(--bg-elevated);

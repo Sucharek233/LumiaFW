@@ -43,39 +43,6 @@
     gap: .75rem
 }
 
-.view-controls {
-    display: flex;
-    background: var(--bg-elevated);
-    border-radius: var(--border-radius);
-    padding: .25rem;
-    border: 1px solid var(--border-primary)
-}
-
-.view-btn {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    padding: .625rem .875rem;
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center
-}
-
-.view-btn:hover {
-    color: var(--text-primary);
-    background: var(--bg-card)
-}
-
-.view-btn.active {
-    background: var(--primary);
-    color: #fff;
-    box-shadow: var(--shadow-sm)
-}
-
 .header-icon-btn {
     background: var(--bg-elevated);
     border: 1px solid var(--border-primary);
@@ -137,15 +104,6 @@
 .header-icon-btn:hover .tooltip {
     opacity: 1;
     visibility: visible
-}
-
-#header h2 {
-    margin: 0;
-    color: var(--header-text-col);  /* Light text color for the heading */
-}
-
-#version {
-    font-size: 9pt
 }
 
 @media (max-width: 768px) {

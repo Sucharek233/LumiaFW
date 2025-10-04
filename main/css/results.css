@@ -21,11 +21,6 @@
 #rmSelection {
     display: inline-flex;
     gap: .5rem;
-    /* background: var(--bg-secondary); */
-    /* padding: .75rem; */
-    /* border-radius: var(--border-radius); */
-    /* border: 2px solid var(--border-primary);
-    box-shadow: var(--shadow-md); */
     position: relative;
     width: fit-content;
     margin-bottom: 10px;
@@ -91,16 +86,4 @@
     flex-direction: column;
     gap: 8px;
     border-radius: 12px;
-}
-
-.ccSectionName {
-    margin: 0;
-    font-size: 18px;
-    text-align: center;
-    background-color: var(--ccsection-text);
-    border-radius: 6px;
-    font-weight: bold;
-    padding: 3px 4px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }

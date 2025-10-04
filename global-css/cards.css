@@ -1,8 +1,6 @@
 #cards {
     display: flex;
     flex-direction: column;
-    /* gap: 10px; */
-    /* margin-bottom: 12px; */
     overflow: auto;
     padding-right: 10px;
 }
@@ -27,19 +25,6 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
     border-radius: 12px;
 }
-
-/* .countryBadge:after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid var(--primary-light)
-} */
 
 .cardContent {
     padding: 1.75rem;
@@ -85,14 +70,8 @@
     overflow: hidden;
 }
 
-
 .card p::-webkit-scrollbar {
     width: 0;
     height: 0;
     display: none;
 }
-
-/* .cardEm {
-    background-color: var(--card-em-bg);
-    margin-bottom: 10px;
-} */
